@@ -29,6 +29,7 @@ CREATE TABLE `Student` (
   `Mob_no` varchar(255) NOT NULL,
   `Dept` varchar(255) NOT NULL,
   `Year_of_study` varchar(255) NOT NULL,
+  `Pwd` LONGTEXT NOT NULL,
   `Hostel_id` int(10) DEFAULT NULL,
   `Room_id` int(10) DEFAULT NULL,
   PRIMARY KEY (`Student_id`),

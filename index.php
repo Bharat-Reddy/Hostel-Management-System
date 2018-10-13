@@ -31,10 +31,10 @@
         <form action="includes/login.inc.php" method="POST">
 
             <div class=" w3l-form-group">
-                <label>Username:</label>
+                <label>Student Roll No:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
-                    <input type="text" class="form-control" name="username" placeholder="Username" required="required" />
+                    <input type="text" class="form-control" name="student_roll_no" placeholder="Roll No" required="required" />
                 </div>
             </div>
             <div class=" w3l-form-group">
