@@ -1,9 +1,3 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,32 +28,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <h1>Hostel Room Allocation System</h1>
     <div class=" w3l-login-form">
         <h2>Login Here</h2>
-        <form action="#" method="POST">
+        <form action="includes/login.inc.php" method="POST">
 
             <div class=" w3l-form-group">
                 <label>Username:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
-                    <input type="text" class="form-control" placeholder="Username" required="required" />
+                    <input type="text" class="form-control" name="username" placeholder="Username" required="required" />
                 </div>
             </div>
             <div class=" w3l-form-group">
                 <label>Password:</label>
                 <div class="group">
                     <i class="fas fa-unlock"></i>
-                    <input type="password" class="form-control" placeholder="Password" required="required" />
+                    <input type="password" class="form-control" name="pwd" placeholder="Password" required="required" />
                 </div>
             </div>
-            <div class="forgot">
+            <!--<div class="forgot">
                 <a href="#">Forgot Password?</a>
                 <p><input type="checkbox">Remember Me</p>
-            </div>
-            <button type="submit">Login</button>
+            </div>-->
+            <button type="submit" name="login-submit">Login</button>
         </form>
-        <p class=" w3l-register-p">Don't have an account?<a href="#" class="register"> Register</a></p>
+        <p class=" w3l-register-p">Don't have an account?<a href="signup.php" class="register"> Sign up</a></p>
     </div>
     <footer>
-        <p class="copyright-agileinfo"> &copy; 2018 Material Login Form. All Rights Reserved | Design by <a href="https://www.linkedin.com/in/bharat-reddy/">Bharat-Prajwal-Rakesh</a></p>
+        <p class="copyright-agileinfo"> &copy; 2018 DBMS Project. All Rights Reserved | Design by <a href="https://www.linkedin.com/in/bharat-reddy/">Bharat-Prajwal-Rakesh</a></p>
     </footer>
 
 </body>
