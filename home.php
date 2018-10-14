@@ -25,16 +25,16 @@
 	</script>
 	<!--// Meta tag Keywords -->
 	
-	<link href="css_home/slider.css" type="text/css" rel="stylesheet" media="all"> 
+	<link href="web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all"> 
 	
 	<!-- css files -->
-	<link rel="stylesheet" href="css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-	<link rel="stylesheet" href="css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
 	
 	<!-- testimonials css -->
-	<link rel="stylesheet" href="css_home/flexslider.css" type="text/css" media="screen" property="" /><!-- flexslider css -->
+	<link rel="stylesheet" href="web_home/css_home/flexslider.css" type="text/css" media="screen" property="" /><!-- flexslider css -->
 	<!-- //testimonials css -->
 
 	<!-- web-fonts -->
@@ -88,6 +88,19 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="contact.php">Contact</a>
+					</li>
+					<li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Username
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu agile_short_dropdown">
+							<li>
+								<a href="error.php">My Profile</a>
+							</li>
+							<li>
+								<a href="logout.inc.php">Logout</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</div>
