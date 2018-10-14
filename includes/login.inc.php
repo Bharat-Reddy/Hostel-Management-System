@@ -29,6 +29,8 @@ if (isset($_POST['login-submit'])) {
         $_SESSION['mob_no'] = $row['Mob_no'];
         $_SESSION['department'] = $row['Dept'];
         $_SESSION['year_of_study'] = $row['Year_of_study'];
+        $_SESSION['hostel_id'] = $row['Hostel_id'];
+        $_SESSION['room_id'] = $row['Room_id'];
         if(isset($_SESSION['department'])){
           echo "<script type='text/javascript'>alert('Set')</script>";
         }

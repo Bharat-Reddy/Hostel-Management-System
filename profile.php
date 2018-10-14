@@ -92,13 +92,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li>
 									<ul class="address-text">
 										<li><b>HOSTEL </b></li>
-										<li>: <?php echo $_SESSION['roll']; ?></li>
+										<?php
+											$hostelId = $_SESSION['hostel_id'];
+											if($hostelId == NULL){
+												$hostelName = 'None';
+											}
+											else {
+												$sql = "SELECT * FROM Hostel WHERE Hostel_id = '$hostelId'";
+												$result = mysqli_query($conn, $sql);
+												if($row = mysqli_fetch_assoc($result)){
+													$hostelName = $row['Hostel_name'];
+												}
+												else {
+													echo "<script type='text/javascript'>alert('Foreign Key Error-hostenName!!')</script>";
+												}
+											}
+										 ?>
+
+
+										<li>: <?php echo $hostelName; ?></li>
 									</ul>
 								</li>
 								<li>
 									<ul class="address-text">
 										<li><b>ROOM NO </b></li>
-										<li>: <?php echo $_SESSION['mob_no']; ?></li>
+										<?php
+											$roomId = $_SESSION['room_id'];
+											if($hostelId == NULL || $roomId == NULL){
+												$roomNo = 'None';
+											}
+											else {
+												$sql = "SELECT * FROM Room WHERE Room_id = '$roomId'";
+												$result = mysqli_query($conn, $sql);
+												if($row = mysqli_fetch_assoc($result)){
+													$roomNo = $row['Room_No'];
+												}
+												else {
+													echo "<script type='text/javascript'>alert('Foreign Key Error-roomNo!!')</script>";
+												}
+											}
+										 ?>
+										<li>: <?php echo $roomNo; ?></li>
 									</ul>
 								</li>
 							</ul>
@@ -163,7 +197,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</fieldset>-->
 					<fieldset class="step w3_agileits">
-						<legend>Contact Hostel Manager</legend>
+						<legend>Hostel Manager Info</legend>
 							<div class="agilecontactw3ls-grid">
 								<div class="agile-con-left">
 									<form action="#" method="post">
