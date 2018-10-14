@@ -26,13 +26,13 @@
 	<!--// Meta tag Keywords -->
 	
 	<!-- gallery css -->
-	<link rel="stylesheet" href="css/swipebox.css">
+	<link rel="stylesheet" href="web_home/css_home/swipebox.css">
 	<!-- //gallery css -->
 
 	<!-- css files -->
-	<link rel="stylesheet" href="css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-	<link rel="stylesheet" href="css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
 	
 	<!-- web-fonts -->
