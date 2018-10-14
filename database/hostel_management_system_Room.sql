@@ -25,6 +25,8 @@ DROP TABLE IF EXISTS `Room`;
 CREATE TABLE `Room` (
   `Room_id` int(10) NOT NULL AUTO_INCREMENT,
   `Hostel_id` int(10) NOT NULL,
+  `Room_No` int(10) NOT NULL,
+  `Allocated` BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (`Room_id`),
   KEY `Hostel_id` (`Hostel_id`),
   CONSTRAINT `Room_ibfk_1` FOREIGN KEY (`Hostel_id`) REFERENCES `Hostel` (`Hostel_id`)
