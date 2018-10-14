@@ -29,9 +29,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class="selected">
 					<a href="#"><i class="fa fa-list-ul" aria-hidden="true"></i><span>Info</span></a>
 				</li>
-				<!--<li>
-					<a href="#"><i class="fa fa-folder" aria-hidden="true"></i><span>Work</span></a>
-				</li>-->
+				<li>
+					<a href="#"><i class="fa fa-folder" aria-hidden="true"></i><span>Hostel</span></a>
+				</li>
 				<li>
 					<a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span>Contact</span></a>
 				</li>
@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div id="steps" style="margin:0 auto;" class="agileits w3_steps">
 				<form id="formElem" name="formElem" action="#" method="post" class="w3_form w3l_form_fancy">
 					<fieldset class="step agileinfo w3ls_fancy_step">
-						<legend>About</legend>
+						<legend>Personal Info</legend>
 						<div class="abt-agile">
 							<div class="abt-agile-left">
 							</div>
@@ -79,6 +79,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="clear"></div>
 						</div>
 				</fieldset>
+				<fieldset class="step agileinfo w3ls_fancy_step">
+					<legend>Hostel Info</legend>
+					<div class="abt-agile">
+						<div class="abt-agile-left-hostel">
+						</div>
+						<div class="abt-agile-right">
+
+							<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+							<h5>Student</h5>
+							<ul class="address">
+								<li>
+									<ul class="address-text">
+										<li><b>HOSTEL </b></li>
+										<li>: <?php echo $_SESSION['roll']; ?></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="address-text">
+										<li><b>ROOM NO </b></li>
+										<li>: <?php echo $_SESSION['mob_no']; ?></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+							<div class="clear"></div>
+					</div>
+			</fieldset>
 					<!--	<fieldset class="step wthree">
 						<legend>Work</legend>
 						<div class="work-w3agile">

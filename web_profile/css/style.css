@@ -29,7 +29,7 @@ img{max-width:100%;}
 /*end reset*/
 html, body{
     font-size: 100%;
-    background: url(../images/1.jpg)repeat 0px 0px;
+    background: url(../images/cover3.jpg)repeat 0px 0px;
     background-attachment: fixed;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -97,7 +97,7 @@ input[type="submit"],.agileits_copyright p a,input[type="reset"]{
     width:670px;
 	/*height:320px;*/
     overflow:hidden;
-	background: rgba(76, 72, 72, 0.47);
+	background: rgba(76, 72, 72, 0.87);
 }
 .step{
     float:left;
@@ -209,6 +209,13 @@ p.step_w3layouts {
 }
 .abt-agile-left {
     background: url(../images/c.png) no-repeat 1px 0px;
+    background-size: cover;
+    min-height: 275px;
+    width: 37%;
+    float: left;
+}
+.abt-agile-left-hostel {
+    background: url(../images/hostel.png) no-repeat 1px 0px;
     background-size: cover;
     min-height: 275px;
     width: 37%;
