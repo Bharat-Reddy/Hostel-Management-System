@@ -102,10 +102,10 @@
 					<p class="card-text mb-3">Class aptent taciti sociosqu adis litora torquent per conubia nostra per inceptos himenaeos.</p>
 					<a href="#ab-bot" class="btn scroll">View More</a>
 				</div>
-				<img class="card-img-top" src="images/a1.jpg" alt="Card image cap">
+				<img class="card-img-top" src="web_home/images/a1.jpg" alt="Card image cap">
 			</div>
 			<div class="card col-lg-3 col-md-6 border-0 mt-md-0 mt-5">
-				<img class="card-img-top" src="images/a2.jpg " alt="Card image cap ">
+				<img class="card-img-top" src="web_home/images/a2.jpg " alt="Card image cap ">
 				<div class="card-body bg-light text-center">
 					<h5 class="card-title pt-3">Office Chairs</h5>
 					<p class="card-text mb-3 ">Class aptent taciti sociosqu per conubia nostra per inceptos ad himenaeos.</p>
@@ -113,7 +113,7 @@
 				</div>
 			</div>
 			<div class="card col-lg-3 col-md-6 border-0 mt-lg-0 mt-5 ">
-				<img class="card-img-top " src="images/a3.jpg " alt="Card image cap ">
+				<img class="card-img-top " src="web_home/images/a3.jpg " alt="Card image cap ">
 				<div class="card-body bg-light text-center">
 					<h5 class="card-title pt-3">Home Chairs</h5>
 					<p class="card-text mb-3 ">Class aptent taciti sociosqu per conubia nostra per inceptos ad himenaeos.</p>
@@ -126,7 +126,7 @@
 					<p class="card-text mb-3">Class aptent taciti sociosqu adis litora torquent per conubia nostra per inceptos himenaeos.</p>
 					<a href="#ab-bot" class="btn scroll">View More</a>
 				</div>
-				<img class="card-img-top " src="images/a4.jpg " alt="Card image cap ">
+				<img class="card-img-top " src="web_home/images/a4.jpg " alt="Card image cap ">
 			</div>
 		</div>
 	</div>
@@ -261,22 +261,22 @@
 <!-- js-scripts -->		
 
 	<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
 	<!-- //js -->
 		
 	<!-- stats -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.countup.js"></script>
+	<script src="web_home/js/jquery.waypoints.min.js"></script>
+	<script src="web_home/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>
 	<!-- //stats -->
 
 	<!-- start-smoth-scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="web_home/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="web_home/js/move-top.js"></script>
+	<script type="text/javascript" src="web_home/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		

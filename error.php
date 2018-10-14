@@ -162,14 +162,14 @@
 <!-- js-scripts -->		
 
 	<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
 	<!-- //js -->
 	
 	<!-- start-smoth-scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="web_home/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="web_home/js/move-top.js"></script>
+	<script type="text/javascript" src="web_home/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
