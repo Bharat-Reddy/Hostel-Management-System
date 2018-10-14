@@ -1,0 +1,302 @@
+/*
+    StyleSheet For Responsive Bootstrap Carousel Effect Ken Burns
+    Author: Razboynik
+    Author URI: http://filwebs.ru
+    Description: Bootstrap Carousel Effect Ken Burns
+*/
+.kb_control_left,.kb_control_right
+{
+    top: 50%;
+    z-index: 2;
+    opacity: 0;
+    width: 55px;
+    line-height: 2.9em;
+    height: 55px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    -webkit-transition: all ease-in-out .3s;
+    transition: all ease-in-out .3s;
+}
+.kb_wrapper:hover .kb_control_left,.kb_wrapper:hover .kb_control_right
+{
+    opacity:.8
+}
+.kb_icons
+{
+    line-height:50px;
+    font-size:34px!important;
+    font-weight:normal!important
+}
+.kb_control_left
+{
+    left: 10%!important;
+}
+.kb_control_right
+{
+    right: 10%!important;
+}
+.kb_elastic
+{
+    opacity:1;
+    -webkit-transform:scale3d(1,1,1);
+    transform:scale3d(1,1,1)
+}
+.kb_elastic .item
+{
+    top:0;
+    z-index:1;
+    opacity:0;
+    width:100%;
+    position:absolute;
+    left:0!important;
+    display:block!important;
+    -webkit-transform:scale3d(2,1,2);
+    transform:scale3d(2,1,2);
+    -webkit-transition:-webkit-transform .7s ease-in-out 0s,opacity ease-in-out .7s;
+    transition:transform .7s ease-in-out 0s,opacity ease-in-out .7s
+}
+.kb_elastic .item:first-child
+{
+    top:auto;
+    position:relative
+}
+.kb_elastic .item.active
+{
+    opacity:1;
+    z-index:2;
+    -webkit-transform:scale3d(1,1,1);
+    transform:scale3d(1,1,1);
+    -webkit-transition:-webkit-transform .7s ease-in-out 0s,opacity ease-in-out .7s;
+    transition:transform .7s ease-in-out 0s,opacity ease-in-out .7s
+}
+.kb_wrapper
+{
+	overflow: hidden;
+    max-height: 762px;
+}
+.kb_wrapper>.carousel-inner>.item>img,.kb_wrapper>.carousel-inner>.item>a>img
+{
+    margin:auto;
+    opacity:.8;
+    width:100%!important;
+    -webkit-transform-origin:100% 0;
+    -moz-transform-origin:100% 0;
+    -ms-transform-origin:100% 0;
+    -o-transform-origin:100% 0;
+    transform-origin:100% 0;
+    -webkit-animation:immortalkenburns 20000ms linear 0s infinite alternate;
+    animation:immortalkenburns 20000ms linear 0s infinite alternate
+}
+    @-webkit-keyframes immortalkenburns
+{
+    0%
+{
+    -webkit-transform:scale(1);
+    -webkit-transition:-webkit-transform 20000ms linear 0s
+}
+    100%
+{
+    -webkit-transform:scale(1.2);
+    -webkit-transition:-webkit-transform 20000ms linear 0s
+}
+
+}
+    @-moz-keyframes immortalkenburns
+{
+    0%
+{
+    -moz-transform:scale(1);
+    -moz-transition:-moz-transform 20000ms linear 0s
+}
+    100%
+{
+    -moz-transform:scale(1.2);
+    -moz-transition:-moz-transform 20000ms linear 0s
+}
+
+}
+    @-ms-keyframes immortalkenburns
+{
+    0%
+{
+    -ms-transform:scale(1);
+    -ms-transition:-ms-transform 20000ms linear 0s
+}
+    100%
+{
+    -ms-transform:scale(1.2);
+    -ms-transition:-ms-transform 20000ms linear 0s
+}
+
+}
+    @-o-keyframes immortalkenburns
+{
+    0%
+{
+    -o-transform:scale(1);
+    -o-transition:-o-transform 20000ms linear 0s
+}
+    100%
+{
+    -o-transform:scale(1.2);
+    -o-transition:-o-transform 20000ms linear 0s
+}
+
+}
+    @keyframes immortalkenburns
+{
+    0%
+{
+    transform:scale(1);
+    transition:transform 20000ms linear 0s
+}
+    100%
+{
+    transform:scale(1.2);
+    transition:transform 20000ms linear 0s
+}
+
+}
+.kb_caption
+{
+
+}
+.kb_caption_right
+{
+}
+.kb_caption_center
+{
+    float:none;
+}
+.kb_caption h1
+{
+    font-size:55px;
+    font-weight:300;
+    text-align: center;
+    text-shadow:none;
+    padding:5px 0 5px 15px;
+    -webkit-animation-delay:1s;
+    animation-delay:1s
+}
+.kb_caption h2
+{
+    font-size:30px;
+    text-align: center;
+    text-shadow:none;
+    padding-left:15px;
+    font-weight:normal;
+    -webkit-animation-delay:1.5s;
+    animation-delay:1.5s
+}
+    @media only screen and (max-width:480px)
+{
+.kb_control_left,.kb_control_right
+{
+    border:0
+}
+.kb_icons
+{
+    font-size: 26px!important;
+}
+.kb_caption h1
+{
+    font-size:25px
+}
+.kb_caption h2
+{
+    font-size:20px
+}
+
+}
+    @media(min-width:481px) and (max-width:600px)
+{
+.kb_control_left,.kb_control_right
+{
+    border:0
+}
+.kb_caption
+{
+    width:100%;
+    bottom:25%;
+    text-align:center
+}
+	.kb_control_right {
+		right: 6%!important;
+	}
+	.kb_control_left {
+		left: 6%!important;
+	}
+
+}
+    @media(min-width:601px) and (max-width:767px)
+{
+.kb_caption
+{
+    width:100%;
+    bottom:25%;
+    text-align:center
+}
+
+}
+    @media(min-width:768px) and (max-width:991px)
+{
+.kb_caption
+{
+    bottom:25%
+}
+
+}
+    @media(min-width:992px) and (max-width:1199px)
+{
+.kb_caption
+{
+    bottom:50%
+}
+
+}
+.kb_wrapper
+{
+    background:#000
+}
+.kb_control_left,.kb_control_left:hover,.kb_control_left:active,.kb_control_left:focus,.kb_control_right,.kb_control_right:hover,.kb_control_right:active,.kb_control_right:focus
+{
+    color:#000;
+    border:2px solid #fff;
+    background:#fff !important
+}
+.kb_caption h1
+{
+    color:#bf392b;
+    background:#fff
+}
+.kb_caption h2
+{
+    color:#fff
+}
+@media (max-width:414px){
+	.kb_control_right {
+		right: 6%!important;
+	}
+	.kb_control_left {
+		left: 6%!important;
+	}
+}
+@media (max-width:384px){
+	.kb_control_right {
+		right: 3%!important;
+	}
+	.kb_control_left {
+		left: 3%!important;
+	}
+}
+@media (max-width:384px){
+	.kb_control_left, .kb_control_right {
+		width: 40px;
+		line-height: 1.9em;
+		height: 40px;
+	}
+}
