@@ -181,7 +181,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s1.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=A"><img src="images/s1.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -193,7 +193,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s2.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=B"><img src="images/s2.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -206,7 +206,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s3.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=C"><img src="images/s3.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -218,7 +218,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s4.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=D"><img src="images/s4.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -257,7 +257,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s2.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=E"><img src="images/s2.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -270,7 +270,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s3.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=F"><img src="images/s3.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>

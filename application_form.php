@@ -1,3 +1,7 @@
+<?php
+  require 'includes/config.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,3 +90,36 @@
 </div>
 <!-- //banner --> 
 
+<section class="contact py-5">
+	<div class="container">
+		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Application Form </h2>
+			<div class="mail_grid_w3l">
+				<form action="application_form.php" method="post">
+					<div class="row">
+						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
+							<div class="contact-fields-w3ls">
+								<input type="text" name="Roll_no" placeholder="Roll Number" value="<?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>" required="">
+							</div>
+							<div class="contact-fields-w3ls">
+								<input type="text" name="Hostel" placeholder="Hostel" value="<?php echo $_SESSION['roll']?>" required="">
+							</div>
+							<div class="contact-fields-w3ls">
+								<input type="text" name="Telephone" placeholder="Phone Number" value="<?php echo $_GET['id']?>" required="">
+							</div>
+							<div class="contact-fields-w3ls">
+								<input type="password" name="Password" placeholder="Password" required="">
+							</div>
+						</div>
+						<div class="col-md-6 contact_left_grid" data-aos="fade-left">
+							<div class="contact-fields-w3ls">
+								<textarea name="Message" placeholder="Message..." required=""></textarea>
+							</div>
+							<input type="submit" value="Submit">
+						</div>
+					</div>
+
+				</form>
+			</div>
+		
+	</div>
+</section>

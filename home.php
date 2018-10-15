@@ -4,6 +4,10 @@
 	License: Creative Commons Attribution 3.0 Unported
 	License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+ 
+ require 'includes/config.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +58,7 @@
 	<div class="container agile-banner_nav">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			
-			<h1><a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a></h1>
+			<h1><a class="navbar-brand" href="home.php">In <span class="display"> Trend</span></a></h1>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 			</button>
@@ -62,7 +66,7 @@
 			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="about.php">About</a>
@@ -84,13 +88,13 @@
 						</ul>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="projects.php">Projects</a>
+						<a class="nav-link" href="projects.php">Notice Boards</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="contact.php">Contact</a>
 					</li>
 					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Username
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -98,7 +102,7 @@
 								<a href="error.php">My Profile</a>
 							</li>
 							<li>
-								<a href="logout.inc.php">Logout</a>
+								<a href="includes/logout.inc.php">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -120,7 +124,7 @@
 									<circle id="cd-circle-1" cx="110" cy="400" r="1364"/>
 								</clipPath>
 							</defs> 
-							<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="images/1.jpg"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="web_home/images/1.jpg"></image>
 						</svg>
 					</div> <!-- .svg-wrapper --> 
 					<div class="cd-radial-slider-content">
@@ -128,7 +132,7 @@
 							<div class="text-center">
 								<h2>Interior Architecture </h2>
 								<h3> Furniture </h3>
-								<a href="about.html" class="read">Read More <i class="fas fa-caret-right"></i></a>
+								<a href="about.php" class="read">Read More <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>
 					</div> <!-- .cd-radial-slider-content -->
@@ -142,7 +146,7 @@
 									<circle id="cd-circle-2" cx="1290" cy="400" r="60"/>
 								</clipPath>
 							</defs> 
-							<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="images/2.jpg"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="web_home/images/2.jpg"></image>
 						</svg>
 					</div> <!-- .svg-wrapper --> 
 					<div class="cd-radial-slider-content text-center">
@@ -150,7 +154,7 @@
 							<div class="text-center"> 
 								<h3>Interior Furniture </h3>
 								<h3> Architecture </h3>
-								<a href="about.html" class="read">Read More <i class="fas fa-caret-right"></i></a>
+								<a href="about.php" class="read">Read More <i class="fas fa-caret-right"></i></a>
 								
 							</div>
 						</div>
@@ -165,7 +169,7 @@
 									<circle id="cd-circle-3" cx="110" cy="400" r="60"/>
 								</clipPath>
 							</defs> 
-							<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="images/3.jpg"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="web_home/images/3.jpg"></image>
 						</svg>
 					</div> <!-- .svg-wrapper --> 
 					<div class="cd-radial-slider-content text-center">
