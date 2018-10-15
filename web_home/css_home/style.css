@@ -7,7 +7,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 body{
 	padding:0;
 	margin:0;
-	background:#fff;
 	position:relative;
 	font-family: 'Poiret One', cursive;
 }
@@ -29,8 +28,8 @@ input[type="button"],input[type="submit"],.contact-form input[type="submit"]{
 	-ms-transition:0.5s all;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;	
-}	
+	margin:0;
+}
 p{
 	margin:0;
 }
@@ -164,7 +163,7 @@ h1{
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
-/*-- //top-nav --*/ 
+/*-- //top-nav --*/
 .cd-radial-slider-content h2,.cd-radial-slider-content h3 {
     font-size: 3.5em;
     color: #fff;
@@ -665,7 +664,7 @@ h5.mt-0 {
 @media screen and (max-width: 1440px) {}
 
 @media screen and (max-width:1366px) {
-    
+
 }
 
 @media screen and (max-width:1280px) {}
@@ -1823,7 +1822,7 @@ iframe {
 	bottom: 20px;
 	right: 2%;
 	overflow: hidden;
-	z-index: 999; 
+	z-index: 999;
 	width: 40px;
 	height: 40px;
 	border: none;
@@ -2101,7 +2100,7 @@ iframe {
 		padding: 10em 5em 0;
 	}
 	.cd-radial-slider-content h2, .cd-radial-slider-content h3 {
-		letter-spacing: 6px;	
+		letter-spacing: 6px;
 		font-size: 1.8em;
 	}
 	.agile_count_grid_left span, .agile_count_grid_right p {
@@ -2384,49 +2383,49 @@ iframe {
 	}
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 @media(max-width:1080px){
-	
+
 }
 
 
