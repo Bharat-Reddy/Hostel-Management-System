@@ -130,8 +130,8 @@
 					<div class="cd-radial-slider-content">
 						<div class="wrapper">
 							<div class="text-center">
-								<h2>Interior Architecture </h2>
-								<h3> Furniture </h3>
+								<h2>Hostel Management </h2>
+								<h3> System </h3>
 								<a href="about.php" class="read">Read More <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>

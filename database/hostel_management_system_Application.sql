@@ -16,30 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Room`
+-- Table structure for table `Application`
 --
 
-DROP TABLE IF EXISTS `Room`;
+DROP TABLE IF EXISTS `Application`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Room` (
-  `Room_id` int(10) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `Application` (
+  `Application_id` int(100) NOT NULL AUTO_INCREMENT,
+  `Student_id` varchar(255) NOT NULL,
   `Hostel_id` int(10) NOT NULL,
-  `Room_No` int(10) NOT NULL,
-  `Allocated` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`Room_id`),
+  `Application_status` tinyint(1) DEFAULT NULL,
+  `Room_No` int(10) DEFAULT NULL,
+  `Message` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Application_id`),
+  KEY `Student_id` (`Student_id`),
   KEY `Hostel_id` (`Hostel_id`),
-  CONSTRAINT `Room_ibfk_1` FOREIGN KEY (`Hostel_id`) REFERENCES `Hostel` (`Hostel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `Application_ibfk_1` FOREIGN KEY (`Student_id`) REFERENCES `Student` (`Student_id`),
+  CONSTRAINT `Application_ibfk_2` FOREIGN KEY (`Hostel_id`) REFERENCES `Hostel` (`Hostel_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Room`
+-- Dumping data for table `Application`
 --
 
-LOCK TABLES `Room` WRITE;
-/*!40000 ALTER TABLE `Room` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Room` ENABLE KEYS */;
+LOCK TABLES `Application` WRITE;
+/*!40000 ALTER TABLE `Application` DISABLE KEYS */;
+INSERT INTO `Application` VALUES (1,'B160497CS',1,1,NULL,'I am a handicapped, so I would like to have a room at ground floor ');
+/*!40000 ALTER TABLE `Application` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

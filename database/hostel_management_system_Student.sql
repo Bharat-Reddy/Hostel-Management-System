@@ -29,7 +29,7 @@ CREATE TABLE `Student` (
   `Mob_no` varchar(255) NOT NULL,
   `Dept` varchar(255) NOT NULL,
   `Year_of_study` varchar(255) NOT NULL,
-  `Pwd` LONGTEXT NOT NULL,
+  `Pwd` longtext NOT NULL,
   `Hostel_id` int(10) DEFAULT NULL,
   `Room_id` int(10) DEFAULT NULL,
   PRIMARY KEY (`Student_id`),
@@ -46,6 +46,7 @@ CREATE TABLE `Student` (
 
 LOCK TABLES `Student` WRITE;
 /*!40000 ALTER TABLE `Student` DISABLE KEYS */;
+INSERT INTO `Student` VALUES ('B160497CS','Prajwal','Ghoradkar','09757318791','CSE','3','$2y$10$hGFfPexHXi.Ec.WVp3qK4.RG8yajZeO31LQ/aOeF6iRU9fk3IFrkq',NULL,NULL);
 /*!40000 ALTER TABLE `Student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-14  3:40:52
+-- Dump completed on 2018-10-15 14:14:14
