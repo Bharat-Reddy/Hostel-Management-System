@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $servername = "localhost"; //change this  accordingly
   $dBUsername = "root";
   $dBPassword = "password";

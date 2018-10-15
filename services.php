@@ -181,7 +181,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s1.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=A"><img src="web_home/images/s1.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -193,7 +193,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s2.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=B"><img src="web_home/images/s2.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -206,7 +206,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s3.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=C"><img src="web_home/images/s3.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -218,7 +218,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s4.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=D"><img src="web_home/images/s4.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -245,7 +245,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<img src="images/s1.jpg" class="img-responsive" alt="" />
+								<img src="web_home/images/s1.jpg" class="img-responsive" alt="" />
 							</div>
 						</div>
 					</div>-->
@@ -257,7 +257,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s2.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=E"><img src="web_home/images/s2.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -270,7 +270,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<a href="application_form.php"><img src="images/s3.jpg" class="img-responsive" alt="" /></a>
+								<a href="application_form.php?id=F"><img src="web_home/images/s3.jpg" class="img-responsive" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -282,7 +282,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
 							</div>
 							<div class="mask">
-								<img src="images/s4.jpg" class="img-responsive" alt="" />
+								<img src="web_home/images/s4.jpg" class="img-responsive" alt="" />
 							</div>
 						</div>
 					</div>-->
@@ -299,7 +299,7 @@
 		<h3 class="heading text-capitalize mb-sm-5 mb-4"> Our Team </h3>
 		<div class="row team-grids">
 			<div class="col-md-3 col-sm-6 w3_agileits-team1">
-				<img class="img-fluid" src="images/t1.jpg" alt="">
+				<img class="img-fluid" src="web_home/images/t1.jpg" alt="">
 				<h5 class="mt-3">Elmore</h5>
 				<p>Lorem ipsum</p>
 				<div class="social-icons mt-2">
@@ -317,7 +317,7 @@
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6 mt-sm-0 mt-5 w3_agileits-team1">
-				<img class="img-fluid" src="images/t2.jpg" alt="">
+				<img class="img-fluid" src="web_home/images/t2.jpg" alt="">
 				<h5 class="mt-3">Blanton</h5>
 				<p>Lorem ipsum</p>
 				<div class="social-icons mt-2">
@@ -335,7 +335,7 @@
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6 mt-md-0 mt-5 w3_agileits-team1">
-				<img class="img-fluid" src="images/t3.jpg" alt="">
+				<img class="img-fluid" src="web_home/images/t3.jpg" alt="">
 				<h5 class="mt-3"> Bass</h5>
 				<p>Lorem ipsum</p>
 				<div class="social-icons mt-2">
@@ -353,7 +353,7 @@
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6 mt-md-0 mt-5 w3_agileits-team1">
-				<img class="img-fluid" src="images/t4.jpg" alt="">
+				<img class="img-fluid" src="web_home/images/t4.jpg" alt="">
 				<h5 class="mt-3"> Glickon</h5>
 				<p>Lorem ipsum</p>
 				<div class="social-icons mt-2">
@@ -421,17 +421,17 @@
 <!-- js-scripts -->		
 
 	<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
 	<!-- //js -->
 	
 	<!-- banner js -->
-	<script src="js/snap.svg-min.js"></script>
-	<script src="js/main.js"></script> <!-- Resource jQuery -->  
+	<script src="web_home/js/snap.svg-min.js"></script>
+	<script src="web_home/js/main.js"></script> <!-- Resource jQuery -->  
 	<!-- //banner js --> 
 
 	<!-- flexSlider --><!-- for testimonials -->
-	<script defer src="js/jquery.flexslider.js"></script>
+	<script defer src="web_home/js/jquery.flexslider.js"></script>
 	<script type="text/javascript">
 		$(window).load(function(){
 		  $('.flexslider').flexslider({
@@ -445,9 +445,9 @@
 	<!-- //flexSlider --><!-- for testimonials -->
 
 	<!-- start-smoth-scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="web_home/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="web_home/js/move-top.js"></script>
+	<script type="text/javascript" src="web_home/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		

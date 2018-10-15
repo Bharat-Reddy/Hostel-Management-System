@@ -100,7 +100,7 @@
 					<article class="blog-x row">
 						<div class="blog-img">
 							<a href="single.html">
-								<img src="images/1.jpg" alt="" class="img-fluid" />
+								<img src="web_home/images/1.jpg" alt="" class="img-fluid" />
 							</a>
 						</div>
 						<div class="blog_info">
@@ -139,7 +139,7 @@
 					<div class="comment-top">
 						<h4>Comments</h4>
 						<div class="media mb-3">
-							<img src="images/t1.jpg" alt="" class="img-fluid">
+							<img src="web_home/images/t1.jpg" alt="" class="img-fluid">
 							<div class="media-body">
 								<h5 class="mt-0">Joseph Goh</h5>
 								<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim sapien velit id felis ac cursus eros.
@@ -147,7 +147,7 @@
 							</div>
 						</div>
 						<div class="media">
-							<img src="images/t2.jpg" alt="" class="img-fluid">
+							<img src="web_home/images/t2.jpg" alt="" class="img-fluid">
 							<div class="media-body">
 								<h5 class="mt-0">Richard Spark</h5>
 								<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim sapien velit id felis ac cursus eros.
@@ -173,7 +173,7 @@
 				</div>
 				<aside class="col-lg-4 single-left">
 					<div class="single-gd">
-						<img src="images/a3.jpg" class="img-fluid" alt="">
+						<img src="web_home/images/a3.jpg" class="img-fluid" alt="">
 						<h4>Sign up to our newsletter</h4>
 						<form action="#" method="post">
 
@@ -213,7 +213,7 @@
 						<div class="blog-grids">
 							<div class="blog-grid-left">
 								<a href="single.html">
-									<img src="images/a1.jpg" class="img-fluid mb-0" alt="">
+									<img src="web_home/images/a1.jpg" class="img-fluid mb-0" alt="">
 								</a>
 							</div>
 							<div class="blog-grid-right">
@@ -227,7 +227,7 @@
 						<div class="blog-grids">
 							<div class="blog-grid-left">
 								<a href="single.html">
-									<img src="images/a2.jpg" class="img-fluid mb-0" alt="">
+									<img src="web_home/images/a2.jpg" class="img-fluid mb-0" alt="">
 								</a>
 							</div>
 							<div class="blog-grid-right">
@@ -241,7 +241,7 @@
 						<div class="blog-grids">
 							<div class="blog-grid-left">
 								<a href="single.html">
-									<img src="images/a3.jpg" class="img-fluid mb-0" alt="">
+									<img src="web_home/images/a3.jpg" class="img-fluid mb-0" alt="">
 								</a>
 							</div>
 							<div class="blog-grid-right">
@@ -256,7 +256,7 @@
 					</div>
 					<div class="single-gd">
 						<h4>Recent Post</h4>
-						<img src="images/a1.jpg" class="img-fluid" alt="">
+						<img src="web_home/images/a1.jpg" class="img-fluid" alt="">
 						<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim sapien velit id felis ac cursus eros.
 									Cras a ornare elit.</p>
 					</div>
@@ -317,14 +317,14 @@
 <!-- js-scripts -->		
 
 	<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
 	<!-- //js -->
 	
 	<!-- start-smoth-scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="web_home/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="web_home/js/move-top.js"></script>
+	<script type="text/javascript" src="web_home/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		

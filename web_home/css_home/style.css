@@ -1779,7 +1779,7 @@ iframe {
 .contact-info {
     background: #3F51B5;
 }
-.mail_grid_w3l input[type="text"], .mail_grid_w3l input[type="email"], .mail_grid_w3l textarea {
+.mail_grid_w3l input[type="text"], .mail_grid_w3l input[type="email"],.mail_grid_w3l input[type="password"], .mail_grid_w3l textarea {
     outline: none;
     padding: 15px;
     font-size: 15px;

@@ -25,6 +25,7 @@ if (isset($_POST['login-submit'])) {
         session_start();
         $_SESSION['roll'] = $row['Student_id'];
         $_SESSION['fname'] = $row['Fname'];
+        $_SESSION['lname'] = $row['Lname'];
         header("Location: ../home.php?login=success");
         exit();
       }
