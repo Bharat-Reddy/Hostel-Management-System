@@ -1,22 +1,16 @@
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <?php
- 
+
  require 'includes/config.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title> Intrend Interior Category Flat Bootstrap Responsive Website Template | Index : W3layouts</title>
-	
+
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<meta name="keywords" content="Intrend Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	<meta name="keywords" content="Intrend Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
@@ -28,15 +22,15 @@
 		}
 	</script>
 	<!--// Meta tag Keywords -->
-	
-	<link href="web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all"> 
-	
+
+	<link href="web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all">
+
 	<!-- css files -->
 	<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
 	<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
-	
+
 	<!-- testimonials css -->
 	<link rel="stylesheet" href="web_home/css_home/flexslider.css" type="text/css" media="screen" property="" /><!-- flexslider css -->
 	<!-- //testimonials css -->
@@ -44,20 +38,20 @@
 	<!-- web-fonts -->
 	<link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
 	<!-- //web-fonts -->
-	
+
 </head>
 
 <body>
 
 <!-- banner -->
-	<div class="banner" id="home"> 
-		<div class="cd-radial-slider-wrapper"> 
-		   
+	<div class="banner" id="home">
+		<div class="cd-radial-slider-wrapper">
+
 <!--Header-->
 <header>
 	<div class="container agile-banner_nav">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			
+
 			<h1><a class="navbar-brand" href="home.php">In <span class="display"> Trend</span></a></h1>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -99,7 +93,7 @@
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
 							<li>
-								<a href="error.php">My Profile</a>
+								<a href="profile.php">My Profile</a>
 							</li>
 							<li>
 								<a href="includes/logout.inc.php">Logout</a>
@@ -108,14 +102,14 @@
 					</li>
 				</ul>
 			</div>
-		  
+
 		</nav>
 	</div>
 </header>
 <!--Header-->
-	
+
 			<ul class="cd-radial-slider" data-radius1="60" data-radius2="1364" data-centerx1="110" data-centerx2="1290">
-				<li class="visible"> 
+				<li class="visible">
 					<div class="svg-wrapper">
 						<svg viewBox="0 0 1400 800">
 							<title>Animated SVG</title>
@@ -123,10 +117,10 @@
 								<clipPath id="cd-image-1">
 									<circle id="cd-circle-1" cx="110" cy="400" r="1364"/>
 								</clipPath>
-							</defs> 
+							</defs>
 							<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="web_home/images/1.jpg"></image>
 						</svg>
-					</div> <!-- .svg-wrapper --> 
+					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content">
 						<div class="wrapper">
 							<div class="text-center">
@@ -136,7 +130,7 @@
 							</div>
 						</div>
 					</div> <!-- .cd-radial-slider-content -->
-				</li> 
+				</li>
 				<li class="next-slide">
 					<div class="svg-wrapper">
 						<svg viewBox="0 0 1400 800">
@@ -145,21 +139,21 @@
 								<clipPath id="cd-image-2">
 									<circle id="cd-circle-2" cx="1290" cy="400" r="60"/>
 								</clipPath>
-							</defs> 
+							</defs>
 							<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="web_home/images/2.jpg"></image>
 						</svg>
-					</div> <!-- .svg-wrapper --> 
+					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content text-center">
 						<div class="wrapper">
-							<div class="text-center"> 
+							<div class="text-center">
 								<h3>Interior Furniture </h3>
 								<h3> Architecture </h3>
 								<a href="about.php" class="read">Read More <i class="fas fa-caret-right"></i></a>
-								
+
 							</div>
 						</div>
 					</div> <!-- .cd-radial-slider-content -->
-				</li> 
+				</li>
 				<li>
 					<div class="svg-wrapper">
 						<svg viewBox="0 0 1400 800">
@@ -168,20 +162,20 @@
 								<clipPath id="cd-image-3">
 									<circle id="cd-circle-3" cx="110" cy="400" r="60"/>
 								</clipPath>
-							</defs> 
+							</defs>
 							<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="web_home/images/3.jpg"></image>
 						</svg>
-					</div> <!-- .svg-wrapper --> 
+					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content text-center">
 						<div class="wrapper">
-							<div class="text-center"> 
+							<div class="text-center">
 								<h3>Interior Design </h3>
 								<h3> Architecture </h3>
 								<a href="about.php" class="read">Read More <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>
 					</div> <!-- .cd-radial-slider-content -->
-				</li> 
+				</li>
 				<li class="prev-slide">
 					<div class="svg-wrapper">
 						<svg viewBox="0 0 1400 800">
@@ -190,28 +184,28 @@
 								<clipPath id="cd-image-4">
 									<circle id="cd-circle-4" cx="110" cy="400" r="60"/>
 								</clipPath>
-							</defs> 
+							</defs>
 							<image height='800px' width="1400px" clip-path="url(#cd-image-4)" xlink:href="web_home/images/4.jpg"></image>
 						</svg>
-					</div> <!-- .svg-wrapper --> 
+					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content text-center">
 						<div class="wrapper">
-							<div class="text-center"> 
+							<div class="text-center">
 								<h3>Interior Architecture </h3>
 								<h3> furniture </h3>
 								<a href="about.php" class="read">Read More <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>
 					</div> <!-- .cd-radial-slider-content -->
-				</li> 
-			</ul> <!-- .cd-radial-slider --> 
+				</li>
+			</ul> <!-- .cd-radial-slider -->
 			<ul class="cd-radial-slider-navigation">
 				<li><a href="#0" class="next"><i class="fas fa-chevron-right"></i></a></li>
 				<li><a href="#0" class="prev"><i class="fas fa-chevron-left"></i></a></li>
 			</ul> <!-- .cd-radial-slider-navigation -->
-		</div> <!-- .cd-radial-slider-wrapper --> 
+		</div> <!-- .cd-radial-slider-wrapper -->
 	</div>
-<!-- //banner --> 
+<!-- //banner -->
 
 <!-- about -->
 <section class="wthree-row py-5">
@@ -390,7 +384,7 @@
 										<h5>Michael</h5>
 										<h4>Best Quality Furniture</h4>
 									</div>
-									
+
 									<div class="clearfix"></div>
 									<p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sed sed nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies tortor. Curabitur ut odio vestibulum consectetur.</p>
 								</div>
@@ -402,7 +396,7 @@
 										<h5>don libero</h5>
 										<h4>Great Place For Great Price</h4>
 									</div>
-									
+
 									<div class="clearfix"></div>
 									<p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sed sed nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies tortor. Curabitur ut odio vestibulum consectetur.</p>
 								</div>
@@ -414,7 +408,7 @@
 										<h5>Elisa</h5>
 										<h4>Lot Of Furniture Design</h4>
 									</div>
-									
+
 									<div class="clearfix"></div>
 									<p class="para-w3-agile"><span class="fa fa-quote-left" aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sed sed nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies tortor. Curabitur ut odio vestibulum consectetur.</p>
 								</div>
@@ -500,17 +494,17 @@
 </footer>
 <!-- footer -->
 
-<!-- js-scripts -->		
+<!-- js-scripts -->
 
 	<!-- js -->
 	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
 	<!-- //js -->
-	
+
 	<!-- banner js -->
 	<script src="web_home/js/snap.svg-min.js"></script>
-	<script src="web_home/js/main.js"></script> <!-- Resource jQuery -->  
-	<!-- //banner js --> 
+	<script src="web_home/js/main.js"></script> <!-- Resource jQuery -->
+	<!-- //banner js -->
 
 	<!-- flexSlider --><!-- for testimonials -->
 	<script defer src="web_home/js/jquery.flexslider.js"></script>
@@ -532,7 +526,7 @@
 	<script type="text/javascript" src="web_home/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
+			$(".scroll").click(function(event){
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
@@ -546,17 +540,17 @@
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
-				easingType: 'linear' 
+				easingType: 'linear'
 				};
 			*/
-								
+
 			$().UItoTop({ easingType: 'easeOutQuart' });
-								
+
 			});
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- start-smoth-scrolling -->
-	
+
 <!-- //js-scripts -->
 
 </body>
