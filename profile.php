@@ -96,15 +96,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 						<li class="dropdown nav-item">
-							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+							<!--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu agile_short_dropdown">
 								<li>
 									<a href="profile.php">My Profile</a>
-								</li>
+								</li>-->
 								<li>
-									<a href="includes/logout.inc.php">Logout</a>
+									<a href="includes/logout.inc.php" class="nav-link">Logout</a>
 								</li>
 							</ul>
 						</li>
