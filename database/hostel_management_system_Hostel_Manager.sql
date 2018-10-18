@@ -16,30 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Room`
+-- Table structure for table `Hostel_Manager`
 --
 
-DROP TABLE IF EXISTS `Room`;
+DROP TABLE IF EXISTS `Hostel_Manager`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Room` (
-  `Room_id` int(10) NOT NULL AUTO_INCREMENT,
-  `Hostel_id` int(10) NOT NULL,
-  `Room_No` int(10) NOT NULL,
-  `Allocated` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`Room_id`),
+CREATE TABLE `Hostel_Manager` (
+  `Hostel_man_id` int(10) NOT NULL AUTO_INCREMENT,
+  `Fname` varchar(255) DEFAULT NULL,
+  `Lname` varchar(255) DEFAULT NULL,
+  `Mob_no` varchar(255) DEFAULT NULL,
+  `Hostel_id` int(10) DEFAULT NULL,
+  `Isadmin` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Hostel_man_id`),
   KEY `Hostel_id` (`Hostel_id`),
-  CONSTRAINT `Room_ibfk_1` FOREIGN KEY (`Hostel_id`) REFERENCES `Hostel` (`Hostel_id`)
+  CONSTRAINT `Hostel_Manager_ibfk_1` FOREIGN KEY (`Hostel_id`) REFERENCES `Hostel` (`Hostel_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Room`
+-- Dumping data for table `Hostel_Manager`
 --
 
-LOCK TABLES `Room` WRITE;
-/*!40000 ALTER TABLE `Room` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Room` ENABLE KEYS */;
+LOCK TABLES `Hostel_Manager` WRITE;
+/*!40000 ALTER TABLE `Hostel_Manager` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Hostel_Manager` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-18 11:23:47
+-- Dump completed on 2018-10-18 11:23:48
