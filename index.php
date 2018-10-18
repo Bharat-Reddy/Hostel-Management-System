@@ -27,7 +27,7 @@
 <body>
     <h1>Hostel Room Allocation System</h1>
     <div class=" w3l-login-form">
-        <h2>Login Here</h2>
+        <h2>Student Login</h2>
         <form action="includes/login.inc.php" method="POST">
 
             <div class=" w3l-form-group">
@@ -50,6 +50,7 @@
             </div>-->
             <button type="submit" name="login-submit">Login</button>
         </form>
+          <p class=" w3l-register-p">Login as<a href="login-hostel_manager.php" class="register"> Hostel-Manager/Admin</a></p>
         <p class=" w3l-register-p">Don't have an account?<a href="signup.php" class="register"> Sign up</a></p>
     </div>
     <footer>

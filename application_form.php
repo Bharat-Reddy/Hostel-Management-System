@@ -1,6 +1,5 @@
 <?php
   require 'includes/config.inc.php';
-  $hostel_temp = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +94,7 @@
 	<div class="container">
 		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Application Form </h2>
 			<div class="mail_grid_w3l">
-				<form action="application_form.php" method="post">
+				<form action="application_form.php?id=<?php echo $_GET['id']?>" method="post">
 					<div class="row">
 						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
 							<div class="contact-fields-w3ls">
@@ -125,30 +124,128 @@
 	</div>
 </section>
 
+<!--footer-->
+<footer class="py-5">
+	<div class="container py-md-5">
+		<div class="footer-logo mb-5 text-center">
+			<a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a>
+		</div>
+		<div class="footer-grid">
+			<div class="social mb-4 text-center">
+				<ul class="d-flex justify-content-center">
+					<li class="mx-2"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-twitter"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fas fa-rss"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-google-plus"></span></a></li>
+				</ul>
+			</div>
+			<div class="list-footer">
+				<ul class="footer-nav text-center">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="about.html">About</a>
+					</li>
+					<li>
+						<a href="services.html">Services</a>
+					</li>
+					<li>
+						<a href="projects.html">Gallery</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<div class="agileits_w3layouts-copyright mt-4 text-center">
+				<p>© 2018 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
+		</div>
+		</div>
+	</div>
+</footer>
+<!-- footer -->
+
+<!-- js-scripts -->		
+
+	<!-- js -->
+	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<!-- //js -->
+		
+	<!-- stats -->
+	<script src="web_home/js/jquery.waypoints.min.js"></script>
+	<script src="web_home/js/jquery.countup.js"></script>
+	<script>
+		$('.counter').countUp();
+	</script>
+	<!-- //stats -->
+
+	<!-- start-smoth-scrolling -->
+	<script src="web_home/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="web_home/js/move-top.js"></script>
+	<script type="text/javascript" src="web_home/js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+	
+<!-- //js-scripts -->
+
+</body>
+</html>
 
 <?php
    //echo 'Hello';
+   
    if(isset($_POST['submit'])){
-     $roll_no = $_POST['roll_no'];
+     $roll = $_SESSION['roll'];
      $password = $_POST['pwd'];
-     $hostel = $_POST['hostel'];
+     $hostel = $_GET['id'];
+     $message = $_POST['Message'];
 
+     /*echo "<script type='text/javascript'>alert('<?php echo $roll ?>')</script>";*/
      
 
-     $query = "SELECT * FROM Student WHERE Student_id = '$roll_no'";
+     $query = "SELECT * FROM Student WHERE Student_id = '$roll'";
      $result = mysqli_query($conn,$query);
      if($row = mysqli_fetch_assoc($result)){
      	//echo 'World';
      	$pwdCheck = password_verify($password, $row['Pwd']);
+     	
         if($pwdCheck == false){
             echo "<script type='text/javascript'>alert('Incorrect Password!!')</script>";
       }
       else if($pwdCheck == true) {
+
       	    $query2 = "SELECT * FROM Hostel WHERE Hostel_name = '$hostel'";
       	    $result2 = mysqli_query($conn,$query2);
       	    $row2 = mysqli_fetch_assoc($result2);
       	    $hostel_id = $row2['Hostel_id'];
-            $query3 = "INSERT INTO Application (Student_id,Hostel_id,'Application_status') VALUES ('$roll_no','$hostel_id','true')";
+            $query3 = "INSERT INTO Application (Student_id,Hostel_id,Application_status,Message) VALUES ('$roll','$hostel_id',true,'$message')";
             $result3 = mysqli_query($conn,$query3);
 
             if($result3){
