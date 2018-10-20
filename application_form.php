@@ -228,12 +228,21 @@
      $message = $_POST['Message'];
 
      /*echo "<script type='text/javascript'>alert('<?php echo $roll ?>')</script>";*/
+     $query_imp = "SELECT * FROM Student WHERE Student_id = '$roll'";
+     $result_imp = mysqli_query($conn,$query_imp);
+     $row_imp = mysqli_fetch_assoc($result_imp);
+     $room_id = $row_imp['Room_id'];
+     /*echo "<script type='text/javascript'>alert('<?php echo $room_id ?>')</script>";*/
+     if(is_null($room_id)){
      
+     $query_imp2 = "SELECT * FROM Application WHERE Student_id = '$roll'";
+     $result_imp2 = mysqli_query($conn,$query_imp2);
+     if(mysqli_num_rows($result_imp2)==0){
+
 
      $query = "SELECT * FROM Student WHERE Student_id = '$roll'";
      $result = mysqli_query($conn,$query);
      if($row = mysqli_fetch_assoc($result)){
-     	//echo 'World';
      	$pwdCheck = password_verify($password, $row['Pwd']);
      	
         if($pwdCheck == false){
@@ -251,10 +260,18 @@
             if($result3){
             	 echo "<script type='text/javascript'>alert('Application sent successfully')</script>";
             }
-        
       }
      }
-     
+
+     }
+     else{
+     	echo "<script type='text/javascript'>alert('You have Already applied for a Room')</script>";
+     }
+    
+     }
+     else{
+          echo "<script type='text/javascript'>alert('You have Already been alloted a Room')</script>";   
+      }
 
 
 }
