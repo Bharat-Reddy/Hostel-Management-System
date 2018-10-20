@@ -29,7 +29,9 @@ if (isset($_POST['login-submit'])) {
         $_SESSION['mob_no'] = $row['Mob_no'];
         $_SESSION['username'] = $row['Username'];
         $_SESSION['hostel_id'] = $row['Hostel_id'];
+        $_SESSION['email'] = $row['Email'];
         $_SESSION['isadmin'] = $row['Isadmin'];
+        $_SESSION['PSWD'] = $row['Pwd'];
 
         //Just for checking if session variables are working properly
         if(isset($_SESSION['username'])){
@@ -43,7 +45,7 @@ if (isset($_POST['login-submit'])) {
           header("Location: ../home_manager.php?login=success");
         }
         else {
-          header("Location: ../home_admin.php?login=success");
+          header("Location: ../admin/admin_home.php?login=success");
         }
         //exit();
       }
