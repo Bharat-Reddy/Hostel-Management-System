@@ -166,44 +166,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="abt-agile-left">
             </div>
             <div class="abt-agile-right">
-
-              <h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+							<?php
+									$ad=1;
+									$queryA = "SELECT * FROM Hostel_Manager WHERE Isadmin = '$ad'";
+									$resultA = mysqli_query($conn,$queryA);
+									$rowA = mysqli_fetch_assoc($resultA);
+									$adFname = $rowA['Fname'];
+									$adLname = $rowA['Lname'];
+									$adUname = $rowA['Username'];
+									$adMob = $rowA['Mob_no'];
+									$adEmail = $rowA['Email'];
+							 ?>
+              <h3><?php echo $adFname." ".$adLname; ?></h3>
               <h5>Admin</h5>
               <ul class="address">
                 <li>
                   <ul class="address-text">
                     <li><b>Username </b></li>
-                    <li>: <?php echo $_SESSION['username']; ?></li>
+                    <li>: <?php echo $adUname; ?></li>
                   </ul>
                 </li>
                 <li>
                   <ul class="address-text">
                     <li><b>PHONE </b></li>
-                    <li>: <?php echo $_SESSION['mob_no']; ?></li>
+                    <li>: <?php echo $adMob; ?></li>
                   </ul>
                 </li>
                 <li>
                   <ul class="address-text">
                     <li><b>Email </b></li>
-                    <li>: <?php echo $_SESSION['email']; ?></li>
+                    <li>: <?php echo $adEmail; ?></li>
                   </ul>
                 </li>
-                <li>
-                  <ul class="address-text">
-                    <li><b>Managing Hostel </b></li>
-                    <?php
-                        $HOID = $_SESSION['hostel_id'];
-                        $query999 = "SELECT * FROM Hostel WHERE Hostel_id = '$HOID'";
-                        $result999 = mysqli_query($conn,$query999);
-                        $row999 = mysqli_fetch_assoc($result999);
-                        $HNM = $row999['Hostel_name'];
-                        if(!$HNM){
-                          $HNM='None';
-                        }
-                     ?>
-                    <li>: <?php echo $HNM; ?></li>
-                  </ul>
-                </li>
+                
               </ul>
             </div>
               <div class="clear"></div>
