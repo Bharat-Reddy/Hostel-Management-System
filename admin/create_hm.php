@@ -95,6 +95,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <br><br><br><br><br>
 	<div class="main">
 		<div id="navigation" style="display:none;" class="w3_agile">
+			<ul>
+				<li class="selected">
+					<a href="#"><i class="fa fa-check" aria-hidden="true"></i><span>Appoint</span></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-close" aria-hidden="true"></i><span>Remove</span></a>
+				</li>
+			</ul>
+		</div>
+		<div id="navigation" style="display:none;" class="w3_agile">
 
 		</div>
 		<div id="wrapper" class="w3ls_wrapper w3layouts_wrapper">
@@ -134,7 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 				</fieldset>-->
         <fieldset class="step w3_agileits">
-          <legend>Hostel Manager Info</legend>
+          <legend>Appoint Hostel Manager</legend>
             <div class="agilecontactw3ls-grid">
               <div class="agile-con-centre">
                 <form action="../includes/hm_signup.php" method="POST">
@@ -144,26 +154,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <input type="text" name="hm_mobile" placeholder="MOBILE NO" required="required">
                   <input type="text" name="hostel_name" placeholder="HOSTEL NAME" required="required">
                   <input type="email" name="Email" placeholder="EMAIL" required="required">
-                  <input type="password" name="pass" placeholder="PASSWORD" required="required">
-                  <input type="password" name="confpass" placeholder="CONFIRM PASSWORD" required="required">
+                  <input type="password" name="pass" placeholder="HOSTEL MANAGER'S PASSWORD" required="required">
+                  <input type="password" name="confpass" placeholder="CONFIRM HOSTEL MANAGER'S PASSWORD" required="required">
 
                   <div class="send-button">
                     <input type="submit" name="hm_signup_submit">
                   </div>
                 </form>
               </div>
-              <!--<div class="agile-con-right">
-                <h6>Address :-</h6>
-                <p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>22 Russell Street, Victoria ,Melbourne AUSTRALIA </p>
-                <p><span><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">E: info [at] domain.com</a> </p>
-                <p><span><i class="fa fa-mobile" aria-hidden="true"></i></span>P: +254 2564584 / +542 8245658 </p>
-                <p><span><i class="fa fa-globe" aria-hidden="true"></i></span><a href="#">W: www.w3layouts.com</a></p>
-              </div>-->
               <div class="clear"></div>
             </div>
         </fieldset>
 
 				</form>
+				<form id="formElem" name="formElem" action="../includes/hm_remove.php" method="post" class="w3_form w3l_form_fancy">
+				<fieldset class="step w3_agileits">
+          <legend>Remove Hostel Manager</legend>
+            <div class="agilecontactw3ls-grid">
+              <div class="agile-con-centre">
+                <form action="../includes/hm_remove.php" method="POST">
+                  <input type="text" name="hm_uname" placeholder="USERNAME" required="required">
+                  <input type="text" name="hostel_name" placeholder="HOSTEL NAME" required="required">
+                  <input type="password" name="pass" placeholder="ADMIN PASSWORD" required="required">
+                  <div class="send-button">
+                    <input type="submit" name="hm_remove_submit">
+                  </div>
+                </form>
+              </div>
+              <div class="clear"></div>
+            </div>
+        </fieldset>
+			</form>
+
 			</div>
 		</div>
 		<div class="agileits_copyright">

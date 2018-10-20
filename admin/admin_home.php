@@ -62,10 +62,10 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="admin_home.php">Home <span class="sr-only">(current)</span></a>
 					</li>
-
           <li class="nav-item">
-						<a class="nav-link" href="create_hm.php">Appoint Hostel Manager</a>
+						<a class="nav-link" href="create_hm.php">Appoint/Remove Hostel Manager</a>
 					</li>
+          
 					<li class="nav-item">
 						<a class="nav-link" href="students.php">Students</a>
 					</li>

@@ -31,6 +31,7 @@ if (isset($_POST['login-submit'])) {
         $_SESSION['hostel_id'] = $row['Hostel_id'];
         $_SESSION['email'] = $row['Email'];
         $_SESSION['isadmin'] = $row['Isadmin'];
+        $_SESSION['PSWD'] = $row['Pwd'];
 
         //Just for checking if session variables are working properly
         if(isset($_SESSION['username'])){

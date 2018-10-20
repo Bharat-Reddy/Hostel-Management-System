@@ -264,19 +264,19 @@ p.step_w3layouts {
 }
 .agilecontactw3ls-grid .send-button {
     margin-top: 0;
-    text-align: left;
+    text-align: center;
 }
 .agilecontactw3ls-grid input[type="submit"] {
-	padding: 10px 40px;
+	padding: 10px 80px;
 	background-color:#00e8ff;
 	color: #fff;
-	font-size: 16px;
+	font-size: 22px;
 	border:none;
 	outline:none;
 	cursor:pointer;
 }
 .agilecontactw3ls-grid input[type="submit"]:hover {
-	color: #FFF;
+	color: #FFFFFF;
 	background-color:#212121;
 }
 .agile-con-left {
