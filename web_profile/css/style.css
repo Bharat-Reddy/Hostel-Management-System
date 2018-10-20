@@ -229,7 +229,7 @@ p.step_w3layouts {
 .work-w3agile {
     padding: 20px;
 }
-.agilecontactw3ls-grid input[type="text"], .agilecontactw3ls-grid input[type="email"],.agilecontactw3ls-grid textarea {
+.agilecontactw3ls-grid input[type="text"], .agilecontactw3ls-grid input[id="HOSTEL_NAME"], .agilecontactw3ls-grid input[list="HOSTEL_NAME"], .agilecontactw3ls-grid input[type="password"], .agilecontactw3ls-grid input[type="radio"], .agilecontactw3ls-grid input[type="email"],.agilecontactw3ls-grid textarea {
 	width: 93%;
 	padding: 10px;
 	border: 1px solid #AFAFAF;
@@ -240,8 +240,19 @@ p.step_w3layouts {
 	margin-bottom: 20px;
 	font-size: 13px;
 }
+.myclass{
+  width: 93%;
+	padding: 10px;
+	border: 1px solid #AFAFAF;
+	color: #AFAFAF;
+	outline: none;
+	background: transparent;
+	border-radius: 0;
+	margin-bottom: 20px;
+	font-size: 13px;
+}
 .agilecontactw3ls-grid input[type="email"] {
-	margin-bottom: 0;
+	margin-bottom: 20px;
 }
 .agilecontactw3ls-grid textarea {
 	height: 100px;
