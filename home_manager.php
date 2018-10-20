@@ -88,7 +88,7 @@
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
 							<li>
-								<a href="profile.php">My Profile</a>
+								<a href="admin/manager_profile.php">My Profile</a>
 							</li>
 							<li>
 								<a href="includes/logout.inc.php">Logout</a>
