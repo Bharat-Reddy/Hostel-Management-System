@@ -113,7 +113,7 @@
 									<circle id="cd-circle-1" cx="110" cy="400" r="1364"/>
 								</clipPath>
 							</defs>
-							<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="web_home/images/1.jpg"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="web_home/images/1.png"></image>
 						</svg>
 					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content">
@@ -135,7 +135,7 @@
 									<circle id="cd-circle-2" cx="1290" cy="400" r="60"/>
 								</clipPath>
 							</defs>
-							<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="web_home/images/2.jpg"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="web_home/images/2.png"></image>
 						</svg>
 					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content text-center">
@@ -158,7 +158,7 @@
 									<circle id="cd-circle-3" cx="110" cy="400" r="60"/>
 								</clipPath>
 							</defs>
-							<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="web_home/images/3.jpg"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="web_home/images/3.png"></image>
 						</svg>
 					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content text-center">

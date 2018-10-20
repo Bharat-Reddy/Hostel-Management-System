@@ -62,16 +62,11 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="about.php">About</a>
-					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="services.php">Hostels</a>
 					</li>
 					
-					<li class="nav-item">
-						<a class="nav-link" href="projects.php">Notice Boards</a>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="contact.php">Contact</a>
 					</li>
@@ -157,8 +152,7 @@
 					<div class="cd-radial-slider-content text-center">
 						<div class="wrapper">
 							<div class="text-center">
-								<h3>Interior Design </h3>
-								<h3> Architecture </h3>
+								<h3>Hostels</h3>
 								
 							</div>
 						</div>
@@ -191,31 +185,21 @@
 			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
 		</div>
 		<div class="footer-grid">
-			<div class="social mb-4 text-center">
-				<ul class="d-flex justify-content-center">
-					<li class="mx-2"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-twitter"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fas fa-rss"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-google-plus"></span></a></li>
-				</ul>
-			</div>
+			
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="home.php">Home</a>
+					</li>
+					
+					<li>
+						<a href="services.php">Hostels</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="contact.php">Contact</a>
 					</li>
 					<li>
-						<a href="services.html">Services</a>
-					</li>
-					<li>
-						<a href="projects.html">Gallery</a>
-					</li>
-					<li>
-						<a href="contact.html">Contact</a>
+						<a href="profile.php">Profile</a>
 					</li>
 				</ul>
 			</div>
