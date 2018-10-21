@@ -63,7 +63,7 @@
 						</li>
 						
 						<li class="nav-item">
-							<a class="nav-link" href="services.php">Services</a>
+							<a class="nav-link" href="services.php">Hostels</a>
 						</li>
 						<li class="nav-item active">
 							<a class="nav-link" href="contact.php">Contact</a>

@@ -206,6 +206,9 @@
 						<a href="create_hm.php">Appoint</a>
 					</li>
 					<li>
+						<a href="students.php">Student</a>
+					</li>
+					<li>
 						<a href="admin_contact.php">Contact</a>
 					</li>
 					<li>

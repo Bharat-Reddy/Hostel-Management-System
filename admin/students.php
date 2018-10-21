@@ -242,6 +242,9 @@
 						<a href="create_hm.php">Appoint</a>
 					</li>
 					<li>
+						<a href="students.php">Students</a>
+					</li>
+					<li>
 						<a href="admin_contact.php">Contact</a>
 					</li>
 					<li>
@@ -258,8 +261,8 @@
 <!-- js-scripts -->
 
 	<!-- js -->
-	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<script type="text/javascript" src="../web_home/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
 	<!-- //js -->
 
 	<!-- banner js -->

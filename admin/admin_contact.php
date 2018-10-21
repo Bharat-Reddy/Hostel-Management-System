@@ -29,13 +29,13 @@
 		}
 	</script>
 	<!--// Meta tag Keywords -->
-		
+		<link href="../web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all">
 	<!-- css files -->
-	<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-	<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<link rel="stylesheet" href="../web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="../web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="../web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
-	
+	<link rel="stylesheet" href="../web_home/css_home/flexslider.css" type="text/css" media="screen" property="" />
 	<!-- web-fonts -->
 	<link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
 	<!-- //web-fonts -->
@@ -62,10 +62,13 @@
 							<a class="nav-link" href="admin_home.php">Home <span class="sr-only">(current)</span></a>
 						</li>
 						
-						<li class="nav-item">
-							<a class="nav-link" href="admin_services.php">Services</a>
+			<li class="nav-item">
+							<a class="nav-link" href="create_hm.php">Appoint Hostel Manager</a>
 						</li>
-						<li class="nav-item active">
+						<li class="nav-item">
+							<a class="nav-link" href="students.php">Students</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="admin_contact.php">Contact</a>
 						</li>
 						<li class="dropdown nav-item">
@@ -142,7 +145,10 @@
 						<a href="admin_home.php">Home</a>
 					</li>
 					<li>
-						<a href="admin_services.php">Hostels</a>
+						<a href="create_hm.php">Appoint</a>
+					</li>
+					<li>
+						<a href="students.php">Students</a>
 					</li>
 					
 					<li>
@@ -162,8 +168,8 @@
 <!-- js-scripts -->		
 
 	<!-- js -->
-	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="../web_home/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
 	<!-- //js -->
 
 	<!-- start-smoth-scrolling -->

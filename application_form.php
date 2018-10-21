@@ -45,7 +45,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home.php">In <span class="display"> Trend</span></a></h1>
+				<h1><a class="navbar-brand" href="home.php">NITC <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -55,31 +55,25 @@
 						<li class="nav-item">
 							<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="about.php">About</a>
-						</li>
 						<li class="nav-item active">
 							<a class="nav-link" href="services.php">Hostels</a>
-						</li>
-						<li class="dropdown nav-item">
-							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Pages
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu agile_short_dropdown">
-								<li>
-									<a href="error.php">Error Page</a>
-								</li>
-								<li>
-									<a href="single.php">Single Page</a>
-								</li>
-							</ul>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="projects.php">Projects</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
+						<li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu agile_short_dropdown">
+							<li>
+								<a href="profile.php">My Profile</a>
+							</li>
+							<li>
+								<a href="includes/logout.inc.php">Logout</a>
+							</li>
+						</ul>
+					</li>
 					</ul>
 				</div>
 			  
@@ -128,40 +122,28 @@
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a>
+			<a class="navbar-brand" href="http://nitc.ac.in" target="_blank">NIT <span class="display"> CALICUT</span></a>
 		</div>
 		<div class="footer-grid">
-			<div class="social mb-4 text-center">
-				<ul class="d-flex justify-content-center">
-					<li class="mx-2"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-twitter"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fas fa-rss"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-google-plus"></span></a></li>
-				</ul>
-			</div>
+			
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="home.php">Home</a>
+					</li>
+					
+					<li>
+						<a href="services.php">Hostels</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="contact.php">Contact</a>
 					</li>
 					<li>
-						<a href="services.html">Services</a>
-					</li>
-					<li>
-						<a href="projects.html">Gallery</a>
-					</li>
-					<li>
-						<a href="contact.html">Contact</a>
+						<a href="profile.php">Profile</a>
 					</li>
 				</ul>
 			</div>
-			<div class="agileits_w3layouts-copyright mt-4 text-center">
-				<p>© 2018 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
-		</div>
+			
 		</div>
 	</div>
 </footer>
