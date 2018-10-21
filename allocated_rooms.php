@@ -76,7 +76,7 @@
 						</ul>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="contact.php">Contact</a>
+						<a class="nav-link" href="contact_manager.php">Contact</a>
 					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
@@ -238,7 +238,7 @@
 						<a href="allocate_room.php">Allocate</a>
 					</li>
 					<li>
-						<a href="contact.php">Contact</a>
+						<a href="contact_manager.php">Contact</a>
 					</li>
 					<li>
 						<a href="admin/manager_profile.php">Profile</a>

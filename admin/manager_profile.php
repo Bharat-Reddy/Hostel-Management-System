@@ -88,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="contact.php">Contact</a>
+						<a class="nav-link" href="../contact_manager.php">Contact</a>
 					</li>
 						<li class="dropdown nav-item">
 								<li>
