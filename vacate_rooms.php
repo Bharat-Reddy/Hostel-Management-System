@@ -1,6 +1,5 @@
 <?php
   require 'includes/config.inc.php';
-  
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +73,9 @@
 							<li>
 								<a href="empty_rooms.php">Empty Rooms</a>
 							</li>
+							<li>
+								<a href="vacate_rooms.php">Vacate Rooms</a>
+							</li>
 						</ul>
 					</li>
 					<li class="nav-item">
@@ -99,176 +101,86 @@
 	</header>
 	<!--Header-->
 </div>
-<!-- //banner --> 
+
 <br><br><br>
-
-<section class="contact py-5">
-	<div class="container">
-			<div class="mail_grid_w3l">
-				<form action="allocate_room.php" method="post">
-					<div class="row">
-					        <div class="col-md-9"> 
-							<input type="text" placeholder="Search by Roll Number" name="search_box">
-							</div>
-							<div class="col-md-3">
-							<input type="submit" value="Search" name="search"></input>
-							</div>
-					</div>
-				</form>
-			</div>
-	</div>
-</section>
-<?php
-   if (isset($_POST['search'])) {
-   	   $search_box = $_POST['search_box'];
-   	   /*echo "<script type='text/javascript'>alert('<?php echo $search_box; ?>')</script>";*/
-   	   $hostel_id = $_SESSION['hostel_id'];
-   	   $query_search = "SELECT * FROM Application WHERE Student_id like '$search_box%' and Hostel_id = '$hostel_id' and Application_status = '1'";
-   	   $result_search = mysqli_query($conn,$query_search);
-
-   	   //select the hostel name from hostel table
-       $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
-       $row6 = mysqli_fetch_assoc($result6);
-       $hostel_name = $row6['Hostel_name'];
-   	   ?>
-   	   <div class="container">
-   	   <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Student Name</th>
-        <th>Student ID</th>
-        <th>Hostel</th>
-        <th>Message</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-   	   if(mysqli_num_rows($result_search)==0){
-   	   	  echo '<tr><td colspan="4">No Rows Returned</td></tr>';
-   	   }
-   	   else{
-   	   	  while($row_search = mysqli_fetch_assoc($result_search)){
-      		//get the name of the student to display
-            $student_id = $row_search['Student_id'];
-
-            $query7 = "SELECT * FROM Student WHERE Student_id = '$student_id'";
-            $result7 = mysqli_query($conn,$query7);
-            $row7 = mysqli_fetch_assoc($result7);
-            $student_name = $row7['Fname']." ".$row7['Lname'];
-            
-      		echo "<tr><td>{$student_name}</td><td>{$row_search['Student_id']}</td><td>{$hostel_name}</td><td>{$row_search['Message']}</td></tr>\n";
-
-   	   }
-   }
-   ?>
-   </tbody>
-  </table>
-</div>
-<?php
-}
-  ?>
-
-<div class="container">
-<h2 class="heading text-capitalize mb-sm-5 mb-4"> Applications Received </h2>
 <?php
    $hostel_id = $_SESSION['hostel_id'];
-   $query1 = "SELECT * FROM Application where Hostel_id = '$hostel_id' and Application_status = '1'";
+   $query1 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
    $result1 = mysqli_query($conn,$query1);
-   //select the hostel name from hostel table
-   $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-   $result6 = mysqli_query($conn,$query6);
-   $row6 = mysqli_fetch_assoc($result6);
-   $hostel_name = $row6['Hostel_name'];
+   $row1 = mysqli_fetch_assoc($result1);
+   $hostel_name = $row1['Hostel_name'];
 ?>
-        
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Student Name</th>
-        <th>Student ID</th>
-        <th>Hostel</th>
-        <th>Message</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-      if(mysqli_num_rows($result1)==0){
-         echo '<tr><td colspan="4">No Rows Returned</td></tr>';
-      }
-      else{
-      	while($row1 = mysqli_fetch_assoc($result1)){
-      		//get the name of the student to display
-            $student_id = $row1['Student_id']; 
-            $query7 = "SELECT * FROM Student WHERE Student_id = '$student_id'";
-            $result7 = mysqli_query($conn,$query7);
-            $row7 = mysqli_fetch_assoc($result7);
-            $student_name = $row7['Fname']." ".$row7['Lname'];
-            
-      		echo "<tr><td>{$student_name}</td><td>{$row1['Student_id']}</td><td>{$hostel_name}</td><td>{$row1['Message']}</td></tr>\n";
-      	}
-      }
-    ?>
-    </tbody>
-  </table>
-</div>
+
 <section class="contact py-5">
 	<div class="container">
+		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Vacate Form </h2>
 			<div class="mail_grid_w3l">
-				<form action="allocate_room.php" method="post">
-					<div class="row"> 
-							<input type="submit" value="Allocate" name="submit">
+				<form action="vacate_rooms.php" method="post">
+					<div class="row">
+						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
+							<div class="contact-fields-w3ls">
+								<input type="text" name="roll_no" placeholder="Roll Number" required >
+							</div>
+							<div class="contact-fields-w3ls">
+								<input type="text" name="hostel" placeholder="Hostel" value="<?php echo $hostel_name;?>" required="" disabled="disabled">
+							</div>
+							<div class="contact-fields-w3ls">
+								<input type="number" name="room_no" placeholder="Room Number" required="">
+							</div>
+						</div>
+						<div class="col-md-6 contact_left_grid" data-aos="fade-left">
+							<input type="submit" name="submit" value="Click to Vacate">
+						</div>
 					</div>
+
 				</form>
 			</div>
+		
 	</div>
 </section>
 <?php
 if(isset($_POST['submit'])){
-   $result1 = mysqli_query($conn,$query1);
-   
-   /*echo "<script type='text/javascript'>alert('<?php echo $room_no ?>')</script>";*/
-   while($row1 = mysqli_fetch_assoc($result1)){
-         //find the minimum room number
-     $query2 = "SELECT * FROM Room where Room_No = (SELECT MIN(Room_No) FROM Room where Allocated = '0' and Hostel_id = '$hostel_id')";
-     $result2 = mysqli_query($conn,$query2);
-     if(!$result2){
-     	   echo "<script type='text/javascript'>alert('Rooms not available')</script>";
-     	   exit();
-     }
-     $row2 = mysqli_fetch_assoc($result2);
-     $room_no = $row2['Room_No'];
+     $roll = $_POST['roll_no'];
+     $hostel = $_POST['hostel'];
+     $room_number =(int)$_POST['room_no'];
 
-     $student_id = $row1['Student_id'];
-     $query3 = "UPDATE Application SET Application_status = '0',Room_No = '$room_no' WHERE Student_id = '$student_id'";
-     $result3 = mysqli_query($conn,$query3);
-     /*echo "<script type='text/javascript'>alert('<?php echo $result3; ?>')</script>";*/
-     if($result3){
-     	$room_id = $row2['Room_id'];
-     	$query4 = "UPDATE Student SET Hostel_id = '$hostel_id',Room_id = '$room_id' WHERE Student_id = '$student_id'";
-     	$result4 = mysqli_query($conn,$query4);
-     	if($result4){
-     		$query5 = "UPDATE Room SET Allocated = '1' where Room_id = '$room_id'";
-     		$result5 = mysqli_query($conn,$query5);
-     		if($result5){
-     		    echo "<script type='text/javascript'>alert('Rooms Allocated Successfully')</script>";	
-     		}
-     	}
-     	else{
-     		echo "<script type='text/javascript'>alert('Failed to allocate Rooms')</script>";
-     	}
-     }
-     else{
-     	echo "<script type='text/javascript'>alert('Failed to allocate Rooms')</script>";
-     }
-
-   }
-   
+    $query2 = "SELECT * FROM Room WHERE Hostel_id = '$hostel_id' and Room_No = '$room_number'";
+    $result2 = mysqli_query($conn,$query2);
+    if(mysqli_num_rows($result2)==0){
+        echo "<script type='text/javascript'>alert('Incorrect Details')</script>";
+        exit();
+    }
+    $row2 = mysqli_fetch_assoc($result2);
+    if($row2['Allocated']=='0'){
+    	echo "<script type='text/javascript'>alert('Room Not Allocated')</script>";
+    	exit();
+    }
+    $room_id = (int)$row2['Room_id'];
+    /*echo "<script type='text/javascript'>alert('<?php echo $room_id ?>')</script>";*/
+	$query3 = "SELECT * FROM Student WHERE Student_id = '$roll' and Hostel_id = '$hostel_id' and Room_id = '$room_id'";
+	$result3 = mysqli_query($conn,$query3);
+    if(mysqli_num_rows($result3)==0){
+        echo "<script type='text/javascript'>alert('Incorrect Details 2')</script>";
+        exit();
+    }
+    $row3 = mysqli_fetch_assoc($result3);
+    if($result3){
+    	$query4 = "UPDATE Student SET Hostel_id = NULL, Room_id = NULL WHERE Student_id = '$roll'";
+    	$result4 = mysqli_query($conn,$query4);
+    	if($result4){
+    		$query5 = "UPDATE Room SET Allocated = '0' WHERE Room_id = '$room_id'";
+    		$result5 = mysqli_query($conn,$query5);
+    		if($result5){
+    			echo "<script type='text/javascript'>alert('Vacated Successfully')</script>";
+    		}
+    	}
+    }
 }
+
+
 ?>
-<br>
-<br>
-<br>
+
+<br><br><br>
 
 <!-- footer -->
 <footer class="py-5">
