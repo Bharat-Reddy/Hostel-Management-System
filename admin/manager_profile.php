@@ -60,28 +60,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-				<h1><a class="navbar-brand" href="admin_home.php">In <span class="display"> Trend</span></a></h1>
+				<h1><a class="navbar-brand" href="../home_manager.php">NITC <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
 
 				<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="admin_home.php">Home <span class="sr-only">(current)</span></a>
-						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="admin_about.php">About</a>
+							<a class="nav-link" href="../home_manager.php">Home <span class="sr-only">(current)</span></a>
 						</li>
+						
 						<li class="nav-item">
-							<a class="nav-link" href="admin_services.php">Hostels</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="admin_projects.php">Notice Boards</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../contact.php">Contact</a>
-						</li>
+						<a class="nav-link" href="../allocate_room.php">Allocate Rooms</a>
+					</li>
+					<li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Rooms
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu agile_short_dropdown">
+							<li>
+								<a href="../allocated_rooms.php">Allocated Rooms</a>
+							</li>
+							<li>
+								<a href="../empty_rooms.php">Empty Rooms</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../contact_manager.php">Contact</a>
+					</li>
 						<li class="dropdown nav-item">
 								<li>
 									<a href="../includes/logout.inc.php" class="nav-link">Logout</a>
@@ -208,9 +216,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</form>
 			</div>
 		</div>
-		<div class="agileits_copyright">
-			<p>© 2017 Consultancy Profile Widget. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-		</div>
+		
 	</div>
 	<script type="text/javascript" src="../web_profile/js/smoothbox.jquery2.js"></script>
 </body>

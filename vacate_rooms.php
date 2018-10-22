@@ -1,12 +1,11 @@
 <?php
   require 'includes/config.inc.php';
-  
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> Allocated Rooms</title>
+<title> Intrend Interior Category Flat Bootstrap Responsive Website Template | Services : W3layouts</title>
 	
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +47,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home_manager.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="home.php">In <span class="display"> Trend</span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -58,10 +57,11 @@
 						<li class="nav-item">
 							<a class="nav-link" href="home_manager.php">Home <span class="sr-only">(current)</span></a>
 						</li>
-						
+						<li class="nav-item">
+							<a class="nav-link" href="about_manager.php">About</a>
+						</li>
 						<li class="nav-item">
 						<a class="nav-link" href="allocate_room.php">Allocate Room</a>
-					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Rooms
 							<b class="caret"></b>
@@ -73,10 +73,13 @@
 							<li>
 								<a href="empty_rooms.php">Empty Rooms</a>
 							</li>
+							<li>
+								<a href="vacate_rooms.php">Vacate Rooms</a>
+							</li>
 						</ul>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="contact_manager.php">Contact</a>
+						<a class="nav-link" href="contact.php">Contact</a>
 					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
@@ -84,7 +87,7 @@
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
 							<li>
-								<a href="admin/manager_profile.php">My Profile</a>
+								<a href="profile.php">My Profile</a>
 							</li>
 							<li>
 								<a href="includes/logout.inc.php">Logout</a>
@@ -98,154 +101,125 @@
 	</header>
 	<!--Header-->
 </div>
-<!-- //banner --> 
+
 <br><br><br>
+<?php
+   $hostel_id = $_SESSION['hostel_id'];
+   $query1 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
+   $result1 = mysqli_query($conn,$query1);
+   $row1 = mysqli_fetch_assoc($result1);
+   $hostel_name = $row1['Hostel_name'];
+?>
 
 <section class="contact py-5">
 	<div class="container">
+		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Vacate Form </h2>
 			<div class="mail_grid_w3l">
-				<form action="allocated_rooms.php" method="post">
+				<form action="vacate_rooms.php" method="post">
 					<div class="row">
-					        <div class="col-md-9"> 
-							<input type="text" placeholder="Search by Roll Number" name="search_box">
+						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
+							<div class="contact-fields-w3ls">
+								<input type="text" name="roll_no" placeholder="Roll Number" required >
 							</div>
-							<div class="col-md-3">
-							<input type="submit" value="Search" name="search"></input>
+							<div class="contact-fields-w3ls">
+								<input type="text" name="hostel" placeholder="Hostel" value="<?php echo $hostel_name;?>" required="" disabled="disabled">
 							</div>
+							<div class="contact-fields-w3ls">
+								<input type="number" name="room_no" placeholder="Room Number" required="">
+							</div>
+						</div>
+						<div class="col-md-6 contact_left_grid" data-aos="fade-left">
+							<input type="submit" name="submit" value="Click to Vacate">
+						</div>
 					</div>
+
 				</form>
 			</div>
+		
 	</div>
 </section>
 <?php
-   if (isset($_POST['search'])) {
-   	   $search_box = $_POST['search_box'];
-   	   /*echo "<script type='text/javascript'>alert('<?php echo $search_box; ?>')</script>";*/
-   	   $hostel_id = $_SESSION['hostel_id'];
-   	   $query_search = "SELECT * FROM Student WHERE Student_id like '$search_box%' and Hostel_id = '$hostel_id'";
-   	   $result_search = mysqli_query($conn,$query_search);
+if(isset($_POST['submit'])){
+     $roll = $_POST['roll_no'];
+     $hostel = $_POST['hostel'];
+     $room_number =(int)$_POST['room_no'];
 
-   	   //select the hostel name from hostel table
-       $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
-       $row6 = mysqli_fetch_assoc($result6);
-       $hostel_name = $row6['Hostel_name'];
-   	   ?>
-   	   <div class="container">
-   	   <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Student Name</th>
-        <th>Student ID</th>
-        <th>Contact Number</th> 
-        <th>Hostel</th>
-        <th>Room Number</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-   	   if(mysqli_num_rows($result_search)==0){
-   	   	  echo '<tr><td colspan="4">No Rows Returned</td></tr>';
-   	   }
-   	   else{
-   	   	  while($row_search = mysqli_fetch_assoc($result_search)){
-      		//get the name of the student to display
-            $room_id = $row_search['Room_id']; 
-            $query7 = "SELECT * FROM Room WHERE Room_id = '$room_id'";
-            $result7 = mysqli_query($conn,$query7);
-            $row7 = mysqli_fetch_assoc($result7);
-            $room_no = $row7['Room_No'];
-            //student name
-            $student_name = $row_search['Fname']." ".$row_search['Lname'];
-            
-      		echo "<tr><td>{$student_name}</td><td>{$row_search['Student_id']}</td><td>{$row_search['Mob_no']}</td><td>{$hostel_name}</td><td>{$room_no}</td></tr>\n";
-   	   }
-   }
-   ?>
-   </tbody>
-  </table>
-</div>
-<?php
+    $query2 = "SELECT * FROM Room WHERE Hostel_id = '$hostel_id' and Room_No = '$room_number'";
+    $result2 = mysqli_query($conn,$query2);
+    if(mysqli_num_rows($result2)==0){
+        echo "<script type='text/javascript'>alert('Incorrect Details')</script>";
+        exit();
+    }
+    $row2 = mysqli_fetch_assoc($result2);
+    if($row2['Allocated']=='0'){
+    	echo "<script type='text/javascript'>alert('Room Not Allocated')</script>";
+    	exit();
+    }
+    $room_id = (int)$row2['Room_id'];
+    /*echo "<script type='text/javascript'>alert('<?php echo $room_id ?>')</script>";*/
+	$query3 = "SELECT * FROM Student WHERE Student_id = '$roll' and Hostel_id = '$hostel_id' and Room_id = '$room_id'";
+	$result3 = mysqli_query($conn,$query3);
+    if(mysqli_num_rows($result3)==0){
+        echo "<script type='text/javascript'>alert('Incorrect Details 2')</script>";
+        exit();
+    }
+    $row3 = mysqli_fetch_assoc($result3);
+    if($result3){
+    	$query4 = "UPDATE Student SET Hostel_id = NULL, Room_id = NULL WHERE Student_id = '$roll'";
+    	$result4 = mysqli_query($conn,$query4);
+    	if($result4){
+    		$query5 = "UPDATE Room SET Allocated = '0' WHERE Room_id = '$room_id'";
+    		$result5 = mysqli_query($conn,$query5);
+    		if($result5){
+    			echo "<script type='text/javascript'>alert('Vacated Successfully')</script>";
+    		}
+    	}
+    }
 }
-  ?>
-
-
-<div class="container">
-<h2 class="heading text-capitalize mb-sm-5 mb-4"> Rooms Allotted </h2>
-<?php
-   $hostel_id = $_SESSION['hostel_id'];
-   $query1 = "SELECT * FROM Student where Hostel_id = '$hostel_id'";
-   $result1 = mysqli_query($conn,$query1);
-   //select the hostel name from hostel table
-   $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-   $result6 = mysqli_query($conn,$query6);
-   $row6 = mysqli_fetch_assoc($result6);
-   $hostel_name = $row6['Hostel_name'];
 
 
 ?>
-        
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Student Name</th>
-        <th>Student ID</th>
-        <th>Contact Number</th> 
-        <th>Hostel</th>
-        <th>Room Number</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-      if(mysqli_num_rows($result1)==0){
-         echo '<tr><td colspan="4">No Rows Returned</td></tr>';
-      }
-      else{
-      	while($row1 = mysqli_fetch_assoc($result1)){
-      		//get the room_no of the student from room_id in room table
-            $room_id = $row1['Room_id']; 
-            $query7 = "SELECT * FROM Room WHERE Room_id = '$room_id'";
-            $result7 = mysqli_query($conn,$query7);
-            $row7 = mysqli_fetch_assoc($result7);
-            $room_no = $row7['Room_No'];
-            //student name
-            $student_name = $row1['Fname']." ".$row1['Lname'];
-            
-      		echo "<tr><td>{$student_name}</td><td>{$row1['Student_id']}</td><td>{$row1['Mob_no']}</td><td>{$hostel_name}</td><td>{$room_no}</td></tr>\n";
-      	}
-      }
-    ?>
-    </tbody>
-  </table>
-</div>
-<br>
-<br>
-<br>
+
+<br><br><br>
 
 <!-- footer -->
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
+			<a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a>
 		</div>
 		<div class="footer-grid">
+			<div class="social mb-4 text-center">
+				<ul class="d-flex justify-content-center">
+					<li class="mx-2"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-twitter"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fas fa-rss"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-google-plus"></span></a></li>
+				</ul>
+			</div>
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
 						<a href="home_manager.php">Home</a>
 					</li>
 					<li>
-						<a href="allocate_room.php">Allocate</a>
+						<a href="about_manager.php">About</a>
 					</li>
 					<li>
-						<a href="contact_manager.php">Contact</a>
+						<a href="services.php">Services</a>
 					</li>
 					<li>
-						<a href="admin/manager_profile.php">Profile</a>
+						<a href="projects.php">Gallery</a>
+					</li>
+					<li>
+						<a href="contact.php">Contact</a>
 					</li>
 				</ul>
 			</div>
-			
+			<div class="agileits_w3layouts-copyright mt-4 text-center">
+				<p>© 2018 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
+		</div>
 		</div>
 	</div>
 </footer>

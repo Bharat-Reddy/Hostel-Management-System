@@ -4,6 +4,11 @@
 	License: Creative Commons Attribution 3.0 Unported
 	License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<?php
+
+ require 'includes/config.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +52,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home.php">In <span class="display"> Trend</span></a></h1>
+				<h1><a class="navbar-brand" href="home.php">NITC<span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -57,31 +62,28 @@
 						<li class="nav-item">
 							<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="about.php">About</a>
-						</li>
+						
 						<li class="nav-item active">
 							<a class="nav-link" href="services.php">Hostels</a>
 						</li>
-						<li class="dropdown nav-item">
-							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Pages
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu agile_short_dropdown">
-								<li>
-									<a href="error.php">Error Page</a>
-								</li>
-								<li>
-									<a href="single.php">Single Page</a>
-								</li>
-							</ul>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="projects.php">Projects</a>
-						</li>
+						
+						
 						<li class="nav-item">
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
+						<li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu agile_short_dropdown">
+							<li>
+								<a href="profile.php">My Profile</a>
+							</li>
+							<li>
+								<a href="includes/logout.inc.php">Logout</a>
+							</li>
+						</ul>
+					</li>
 					</ul>
 				</div>
 			  
@@ -104,7 +106,7 @@
 						<h4>1 yr</h4>
 					</div>
 					<div class="col-md-9 col-10">
-						<p>Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium.</p>
+						<p>A Hostel</p>
 					</div>
 				</div>
 			</div>
@@ -115,7 +117,7 @@
 						<h4>3 yr</h4>
 					</div>
 					<div class="col-md-9 col-10">
-						<p>Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium.</p>
+						<p>B Hostel</p>
 					</div>
 				</div>
 			</div>
@@ -126,7 +128,7 @@
 						<h4>2 yr</h4>
 					</div>
 					<div class="col-md-9 col-10">
-						<p>Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium.</p>
+						<p>C Hostel</p>
 					</div>
 				</div>
 			</div>
@@ -137,7 +139,7 @@
 						<h4>4 yr</h4>
 					</div>
 					<div class="col-md-9 col-10">
-						<p>Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium.</p>
+						<p>D Hostel</p>
 					</div>
 				</div>
 			</div>
@@ -148,7 +150,7 @@
 						<h4>4 yr</h4>
 					</div>
 					<div class="col-md-9 col-10">
-						<p>Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium.</p>
+						<p>E Hostel</p>
 					</div>
 				</div>
 			</div>
@@ -159,7 +161,7 @@
 						<h4>4 yr</h4>
 					</div>
 					<div class="col-md-9 col-10">
-						<p>Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium.</p>
+						<p>F Hostel</p>
 					</div>
 				</div>
 			</div>
@@ -178,7 +180,7 @@
 							<div class="agile_text_box">
 								<i class="fas fa-bed" aria-hidden="true"></i>
 								<h3> Apply for A-Hostel</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
+								<p>A Hostel</p>
 							</div>
 							<div class="mask">
 								<a href="application_form.php?id=A"><img src="web_home/images/s1.jpg" class="img-responsive" alt="" /></a>
@@ -190,7 +192,7 @@
 							<div class="agile_text_box">
 								<i class="fas fa-bed" aria-hidden="true"></i>
 								<h3>Apply for B-Hostel</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
+								<p>B Hostel</p>
 							</div>
 							<div class="mask">
 								<a href="application_form.php?id=B"><img src="web_home/images/s2.jpg" class="img-responsive" alt="" /></a>
@@ -203,7 +205,7 @@
 							<div class="agile_text_box">
 								<i class="fas fa-bed" aria-hidden="true"></i>
 								<h3>Apply for C-Hostel</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
+								<p>C Hostel</p>
 							</div>
 							<div class="mask">
 								<a href="application_form.php?id=C"><img src="web_home/images/s3.jpg" class="img-responsive" alt="" /></a>
@@ -215,7 +217,7 @@
 							<div class="agile_text_box">
 								<i class="fas fa-bed" aria-hidden="true"></i>
 								<h3>Apply for D-Hostel</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
+								<p>D Hostel</p>
 							</div>
 							<div class="mask">
 								<a href="application_form.php?id=D"><img src="web_home/images/s4.jpg" class="img-responsive" alt="" /></a>
@@ -254,7 +256,7 @@
 							<div class="agile_text_box">
 								<i class="fas fa-bed" aria-hidden="true"></i>
 								<h3> Apply for E-Hostel</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
+								<p>E Hostel</p>
 							</div>
 							<div class="mask">
 								<a href="application_form.php?id=E"><img src="web_home/images/s2.jpg" class="img-responsive" alt="" /></a>
@@ -267,7 +269,7 @@
 							<div class="agile_text_box">
 								<i class="fas fa-bed" aria-hidden="true"></i>
 								<h3>Apply for F-Hostel </h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adip. Sed semper sem non commodo egestas. In rutrum enim a neque volutpat aliquet</p>
+								<p>F Hostel</p>
 							</div>
 							<div class="mask">
 								<a href="application_form.php?id=F"><img src="web_home/images/s3.jpg" class="img-responsive" alt="" /></a>
@@ -294,125 +296,35 @@
 </div>
 
 <!-- team -->
-<section class="w3ls-team py-5">
-	<div class="container py-3">
-		<h3 class="heading text-capitalize mb-sm-5 mb-4"> Our Team </h3>
-		<div class="row team-grids">
-			<div class="col-md-3 col-sm-6 w3_agileits-team1">
-				<img class="img-fluid" src="web_home/images/t1.jpg" alt="">
-				<h5 class="mt-3">Elmore</h5>
-				<p>Lorem ipsum</p>
-				<div class="social-icons mt-2">
-					<ul>
-						<li>
-							<a href="#" class="fab fa-facebook-f icon-border facebook"> </a>
-						</li>
-						<li class="mx-1">
-							<a href="#" class="fab fa-twitter  icon-border twitter"> </a>
-						</li>
-						<li>
-							<a href="#" class="fab fa-google-plus-g icon-border googleplus"> </a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 mt-sm-0 mt-5 w3_agileits-team1">
-				<img class="img-fluid" src="web_home/images/t2.jpg" alt="">
-				<h5 class="mt-3">Blanton</h5>
-				<p>Lorem ipsum</p>
-				<div class="social-icons mt-2">
-					<ul>
-						<li>
-							<a href="#" class="fab fa-facebook-f icon-border facebook"> </a>
-						</li>
-						<li class="mx-1">
-							<a href="#" class="fab fa-twitter  icon-border twitter"> </a>
-						</li>
-						<li>
-							<a href="#" class="fab fa-google-plus-g icon-border googleplus"> </a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 mt-md-0 mt-5 w3_agileits-team1">
-				<img class="img-fluid" src="web_home/images/t3.jpg" alt="">
-				<h5 class="mt-3"> Bass</h5>
-				<p>Lorem ipsum</p>
-				<div class="social-icons mt-2">
-					<ul>
-						<li>
-							<a href="#" class="fab fa-facebook-f icon-border facebook"> </a>
-						</li>
-						<li class="mx-1">
-							<a href="#" class="fab fa-twitter  icon-border twitter"> </a>
-						</li>
-						<li>
-							<a href="#" class="fab fa-google-plus-g icon-border googleplus"> </a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 mt-md-0 mt-5 w3_agileits-team1">
-				<img class="img-fluid" src="web_home/images/t4.jpg" alt="">
-				<h5 class="mt-3"> Glickon</h5>
-				<p>Lorem ipsum</p>
-				<div class="social-icons mt-2">
-					<ul>
-						<li>
-							<a href="#" class="fab fa-facebook-f icon-border facebook"> </a>
-						</li>
-						<li class="mx-1">
-							<a href="#" class="fab fa-twitter  icon-border twitter"> </a>
-						</li>
-						<li>
-							<a href="#" class="fab fa-google-plus-g icon-border googleplus"> </a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+
 <!-- //team -->
 
 <!-- footer -->
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a>
+			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
 		</div>
 		<div class="footer-grid">
-			<div class="social mb-4 text-center">
-				<ul class="d-flex justify-content-center">
-					<li class="mx-2"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-twitter"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fas fa-rss"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-					<li class="mx-2"><a href="#"><span class="fab fa-google-plus"></span></a></li>
-				</ul>
-			</div>
+			
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="home.php">Home</a>
+					</li>
+					
+					<li>
+						<a href="services.php">Hostels</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="contact.php">Contact</a>
 					</li>
 					<li>
-						<a href="services.html">Services</a>
-					</li>
-					<li>
-						<a href="projects.html">Gallery</a>
-					</li>
-					<li>
-						<a href="contact.html">Contact</a>
+						<a href="profile.php">Profile</a>
 					</li>
 				</ul>
 			</div>
-			<div class="agileits_w3layouts-copyright mt-4 text-center">
-				<p>© 2018 Intrend. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="=_blank"> W3layouts </a></p>
-		</div>
+			
 		</div>
 	</div>
 </footer>

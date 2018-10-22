@@ -46,7 +46,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="index.html">In <span class="display"> Trend</span></a></h1>
+				<h1><a class="navbar-brand" href="home.php">NITC <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -60,21 +60,9 @@
 							<a class="nav-link" href="about.php">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="services.php">Services</a>
+							<a class="nav-link" href="services.php">Hostels</a>
 						</li>
-						<li class="dropdown nav-item">
-							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Pages
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu agile_short_dropdown">
-								<li>
-									<a href="error.php">Error Page</a>
-								</li>
-								<li>
-									<a href="single.php">Single Page</a>
-								</li>
-							</ul>
-						</li>
+						
 						<li class="nav-item">
 							<a class="nav-link" href="projects.php">Projects</a>
 						</li>

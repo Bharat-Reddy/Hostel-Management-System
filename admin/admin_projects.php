@@ -115,9 +115,7 @@
 					<li>
 						<a href="admin_home">Home</a>
 					</li>
-					<li>
-						<a href="admin_about.php">About</a>
-					</li>
+					
 					<li>
 						<a href="admin_services.php">Services</a>
 					</li>
