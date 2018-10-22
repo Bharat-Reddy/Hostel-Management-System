@@ -70,12 +70,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="nav-item active">
 							<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
 						</li>
-						
+
 						<li class="nav-item">
 							<a class="nav-link" href="services.php">Hostels</a>
 						</li>
-						
-						
+
+
 						<li class="nav-item">
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
@@ -273,33 +273,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</fieldset>-->
-					<fieldset class="step w3_agileits">
+					<fieldset class="step agileinfo w3ls_fancy_step">
 						<legend>Hostel Manager Info</legend>
-							<div class="agilecontactw3ls-grid">
-								<div class="agile-con-left">
-									<form action="#" method="post">
-										<input type="text" name="First Name" placeholder="FIRST NAME" required="">
-										<input type="email" name="Email" placeholder="EMAIL" required="">
-										<textarea name="Message" placeholder="MESSAGE" required=""></textarea>
-										<div class="send-button">
-											<input type="submit" value="SEND">
-										</div>
-									</form>
-								</div>
-								<div class="agile-con-right">
-									<h6>Address :-</h6>
-									<p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>22 Russell Street, Victoria ,Melbourne AUSTRALIA </p>
-									<p><span><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">E: info [at] domain.com</a> </p>
-									<p><span><i class="fa fa-mobile" aria-hidden="true"></i></span>P: +254 2564584 / +542 8245658 </p>
-									<p><span><i class="fa fa-globe" aria-hidden="true"></i></span><a href="#">W: www.w3layouts.com</a></p>
-								</div>
-								<div class="clear"></div>
+						<div class="abt-agile">
+							<div class="abt-agile-left">
 							</div>
-					</fieldset>
+							<div class="abt-agile-right">
+								<?php
+									$Hid = $_SESSION['hostel_id'];
+									$sql1 = "SELECT * FROM Hostel_Manager WHERE Hostel_id = '$Hid'";
+									$result1 = mysqli_query($conn, $sql1);
+									if($row1 = mysqli_fetch_assoc($result1)){
+										$hmfname = $row1['Fname'];
+										$hmlname = $row1['Lname'];
+										$hmMob  = $row1['Mob_no'];
+										$hmemail = $row1['Email'];
+									}
+									else {
+										$hmfname = 'none';
+										$hmlname = 'none';
+										$hmMob  = 'none';
+										$hmemail = 'none';
+									}
+								 ?>
+								<h3><?php echo $hmfname." ".$hmlname; ?></h3>
+								<h5>Admin</h5>
+								<ul class="address">
+									<li>
+										<ul class="address-text">
+											<li><b>PHONE </b></li>
+											<li>: <?php echo $hmMob; ?></li>
+										</ul>
+									</li>
+									<li>
+										<ul class="address-text">
+											<li><b>Email </b></li>
+											<li>: <?php echo $hmemail; ?></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+								<div class="clear"></div>
+						</div>
+				</fieldset>
 				</form>
 			</div>
 		</div>
-		
+
 	</div>
 	<script type="text/javascript" src="web_profile/js/smoothbox.jquery2.js"></script>
 </body>
