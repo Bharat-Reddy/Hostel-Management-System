@@ -171,7 +171,12 @@ if(isset($_POST['submit'])){
     		$query5 = "UPDATE Room SET Allocated = '0' WHERE Room_id = '$room_id'";
     		$result5 = mysqli_query($conn,$query5);
     		if($result5){
-    			echo "<script type='text/javascript'>alert('Vacated Successfully')</script>";
+    			$query6 = "DELETE FROM Application WHERE Student_id = '$roll'";
+    			$result6 = mysqli_query($conn,$query6);
+    			if($result6){
+    			    echo "<script type='text/javascript'>alert('Vacated Successfully')</script>";	
+    			}
+    			
     		}
     	}
     }

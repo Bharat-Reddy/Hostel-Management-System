@@ -71,6 +71,9 @@
 							<li>
 								<a href="empty_rooms.php">Empty Rooms</a>
 							</li>
+							<li>
+								<a href="vacate_rooms.php">Vacate Rooms</a>
+							</li>
 						</ul>
 					</li>
 					<li class="nav-item">
