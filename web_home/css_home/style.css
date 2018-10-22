@@ -518,6 +518,8 @@ h5.mt-0 {
 
 .comment-top input[type="text"],
 .comment-top input[type="email"],
+.comment-top input[type="password"],
+.comment-top input[type="radio"],
 .comment-top textarea {
     background: none;
     width: 100%;

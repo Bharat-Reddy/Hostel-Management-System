@@ -8,11 +8,11 @@
 <html lang="en">
 <head>
 <title> Intrend Interior Category Flat Bootstrap Responsive Website Template | Projects : W3layouts</title>
-	
+
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<meta name="keywords" content="Intrend Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	<meta name="keywords" content="Intrend Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
@@ -24,32 +24,32 @@
 		}
 	</script>
 	<!--// Meta tag Keywords -->
-	
+
 	<!-- gallery css -->
 	<link rel="stylesheet" href="web_home/css_home/swipebox.css">
 	<!-- //gallery css -->
 
 	<!-- css files -->
 	<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
 	<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
-	
+
 	<!-- web-fonts -->
 	<link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
 	<!-- //web-fonts -->
-	
+
 </head>
 
 <body>
 
 <!-- banner -->
-<div class="inner-page-banner" id="home"> 	   
+<div class="inner-page-banner" id="home">
 	<!--Header-->
 	<header>
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				
+
 				<h1><a class="navbar-brand" href="home.php">In <span class="display"> Trend</span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -87,13 +87,13 @@
 						</li>
 					</ul>
 				</div>
-			  
+
 			</nav>
 		</div>
 	</header>
 	<!--Header-->
 </div>
-<!-- //banner --> 
+<!-- //banner -->
 
 <!--Gallery-->
 	<div class="gallery py-5">
@@ -101,192 +101,192 @@
 		<h2 class="heading text-capitalize mb-sm-5 mb-3"> Gallery </h2>
 					<div class="row gallery-grids">
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top small wow fadeInLeft animated" data-wow-delay=".5s">
-							<a href="images/s1.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s1.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s1.jpg" alt=" " />
+									<img src="web_home/images/s1.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top small wow fadeInLeft animated" data-wow-delay=".5s">
-							<a href="images/s2.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s2.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s2.jpg" alt=" " />
+									<img src="web_home/images/s2.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top small wow fadeInLeft animated" data-wow-delay=".5s">
-							<a href="images/s3.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s3.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s3.jpg" alt=" " />
+									<img src="web_home/images/s3.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top small wow fadeInUp animated" data-wow-delay=".5s">
-							<a href="images/s4.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s4.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s4.jpg" alt=" " />
+									<img src="web_home/images/s4.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top small ban-mar wow fadeInUp animated" data-wow-delay=".5s">
-							<a href="images/s3.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s3.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s3.jpg" alt=" " />
+									<img src="web_home/images/s3.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top small ban-mar wow fadeInUp animated" data-wow-delay=".5s">
-							<a href="images/s1.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s1.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s1.jpg" alt=" " />
+									<img src="web_home/images/s1.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top three wow ban-mar fadeInLeft animated gap-w3" data-wow-delay=".5s">
-							<a href="images/s4.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s4.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s4.jpg" alt=" " />
+									<img src="web_home/images/s4.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 					</div>
 					<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top three wow ban-mar fadeInLeft animated" data-wow-delay=".5s">
-							<a href="images/s2.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s2.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s2.jpg" alt=" " />
+									<img src="web_home/images/s2.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top three thre ban-mar wow fadeInLeft animated" data-wow-delay=".5s">
-							<a href="images/s2.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s2.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s2.jpg" alt=" " />
+									<img src="web_home/images/s2.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top three thre ban-mar wow fadeInLeft animated" data-wow-delay=".5s">
-							<a href="images/s3.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s3.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s3.jpg" alt=" " />
+									<img src="web_home/images/s3.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top three thre ban-mar wow fadeInLeft animated" data-wow-delay=".5s">
-							<a href="images/s1.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s1.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s1.jpg" alt=" " />
+									<img src="web_home/images/s1.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-4 col-sm-6 ggd baner-top three thre ban-mar wow fadeInLeft animated" data-wow-delay=".5s">
-							<a href="images/s4.jpg" class="b-link-stripe b-animate-go  swipebox">
+							<a href="web_home/images/s4.jpg" class="b-link-stripe b-animate-go  swipebox">
 								<div class="gal-spin-effect vertical ">
-									<img src="images/s4.jpg" alt=" " />
+									<img src="web_home/images/s4.jpg" alt=" " />
 									<div class="gal-text-box">
 										<div class="info-gal-con">
 											<h4>Intrend Gallery</h4>
 											<span class="separator"></span>
 											<p>Sit accusamus, vel blanditiis.</p>
 											<span class="separator"></span>
-											
+
 										</div>
 									</div>
 								</div>
@@ -340,15 +340,15 @@
 </footer>
 <!-- footer -->
 
-<!-- js-scripts -->		
+<!-- js-scripts -->
 
 	<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
 	<!-- //js -->
-	
+
 	<!-- swipe box js -->
-	<script src="js/jquery.swipebox.min.js"></script> 
+	<script src="web_home/js/jquery.swipebox.min.js"></script>
 	    <script type="text/javascript">
 			jQuery(function($) {
 				$(".swipebox").swipebox();
@@ -357,12 +357,12 @@
 	<!-- //swipe box js -->
 
 	<!-- start-smoth-scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="web_home/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="web_home/js/move-top.js"></script>
+	<script type="text/javascript" src="web_home/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
+			$(".scroll").click(function(event){
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
@@ -376,17 +376,17 @@
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
-				easingType: 'linear' 
+				easingType: 'linear'
 				};
 			*/
-								
+
 			$().UItoTop({ easingType: 'easeOutQuart' });
-								
+
 			});
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- start-smoth-scrolling -->
-	
+
 <!-- //js-scripts -->
 
 </body>

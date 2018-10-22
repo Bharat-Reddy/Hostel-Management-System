@@ -29,7 +29,7 @@ img{max-width:100%;}
 /*end reset*/
 html, body{
     font-size: 100%;
-    background: url(../images/cover3.jpg)repeat 0px 0px;
+    background: url(../images/3.png)repeat 0px 0px;
     background-attachment: fixed;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -229,7 +229,7 @@ p.step_w3layouts {
 .work-w3agile {
     padding: 20px;
 }
-.agilecontactw3ls-grid input[type="text"], .agilecontactw3ls-grid input[type="email"],.agilecontactw3ls-grid textarea {
+.agilecontactw3ls-grid input[type="text"], .agilecontactw3ls-grid input[id="HOSTEL_NAME"], .agilecontactw3ls-grid input[list="HOSTEL_NAME"], .agilecontactw3ls-grid input[type="password"], .agilecontactw3ls-grid input[type="radio"], .agilecontactw3ls-grid input[type="email"],.agilecontactw3ls-grid textarea {
 	width: 93%;
 	padding: 10px;
 	border: 1px solid #AFAFAF;
@@ -240,8 +240,19 @@ p.step_w3layouts {
 	margin-bottom: 20px;
 	font-size: 13px;
 }
+.myclass{
+  width: 93%;
+	padding: 10px;
+	border: 1px solid #AFAFAF;
+	color: #AFAFAF;
+	outline: none;
+	background: transparent;
+	border-radius: 0;
+	margin-bottom: 20px;
+	font-size: 13px;
+}
 .agilecontactw3ls-grid input[type="email"] {
-	margin-bottom: 0;
+	margin-bottom: 20px;
 }
 .agilecontactw3ls-grid textarea {
 	height: 100px;
@@ -253,19 +264,19 @@ p.step_w3layouts {
 }
 .agilecontactw3ls-grid .send-button {
     margin-top: 0;
-    text-align: left;
+    text-align: center;
 }
 .agilecontactw3ls-grid input[type="submit"] {
-	padding: 10px 40px;
+	padding: 10px 80px;
 	background-color:#00e8ff;
 	color: #fff;
-	font-size: 16px;
+	font-size: 22px;
 	border:none;
 	outline:none;
 	cursor:pointer;
 }
 .agilecontactw3ls-grid input[type="submit"]:hover {
-	color: #FFF;
+	color: #FFFFFF;
 	background-color:#212121;
 }
 .agile-con-left {

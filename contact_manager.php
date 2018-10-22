@@ -1,11 +1,19 @@
-<?php
-  require 'includes/config.inc.php';
-?>
 
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<?php
+
+ require 'includes/config.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> Intrend Interior Category Flat Bootstrap Responsive Website Template | Services : W3layouts</title>
+<title> Intrend Interior Category Flat Bootstrap Responsive Website Template | Contact : W3layouts</title>
 	
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,16 +30,15 @@
 		}
 	</script>
 	<!--// Meta tag Keywords -->
-		
+		<link href="web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all">
 	<!-- css files -->
 	<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
 	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
 	<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
-	
+	<link rel="stylesheet" href="web_home/css_home/flexslider.css" type="text/css" media="screen" property="" />
 	<!-- web-fonts -->
 	<link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 	<!-- //web-fonts -->
 	
 </head>
@@ -45,7 +52,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="home_manager.php">NITC <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -53,21 +60,35 @@
 				<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="home_manager.php">Home <span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item active">
-							<a class="nav-link" href="services.php">Hostels</a>
-						</li>
+						
 						<li class="nav-item">
-							<a class="nav-link" href="contact.php">Contact</a>
-						</li>
-						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+						<a class="nav-link" href="allocate_room.php">Allocate Rooms</a>
+					</li>
+					<li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Rooms
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
 							<li>
-								<a href="profile.php">My Profile</a>
+								<a href="allocated_rooms.php">Allocated Rooms</a>
+							</li>
+							<li>
+								<a href="empty_rooms.php">Empty Rooms</a>
+							</li>
+						</ul>
+					</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="contact.php">Contact</a>
+						</li>
+						<li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu agile_short_dropdown">
+							<li>
+								<a href="admin/manager_profile.php">My Profile</a>
 							</li>
 							<li>
 								<a href="includes/logout.inc.php">Logout</a>
@@ -84,31 +105,32 @@
 </div>
 <!-- //banner --> 
 
+<!-- contact -->
 <section class="contact py-5">
 	<div class="container">
-		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Application Form </h2>
+		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Contact Us </h2>
 			<div class="mail_grid_w3l">
-				<form action="application_form.php?id=<?php echo $_GET['id']?>" method="post">
+				<form action="#" method="post">
 					<div class="row">
 						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
 							<div class="contact-fields-w3ls">
-								<input type="text" name="Name" placeholder="Name" value="<?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>" required="" disabled="disabled">
+								<input type="text" name="Name" placeholder="Name" required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="roll_no" placeholder="Roll Number" value="<?php echo $_SESSION['roll']?>" required="" disabled="disabled">
+								<input type="email" name="Email" placeholder="Email" required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="hostel" placeholder="Hostel" value="<?php echo $_GET['id']?>" required="" disabled="disabled">
+								<input type="text" name="Telephone" placeholder="Phone Number" required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="password" name="pwd" placeholder="Password" required="">
+								<input type="text" name="Subject" placeholder="Subject" required="">
 							</div>
 						</div>
 						<div class="col-md-6 contact_left_grid" data-aos="fade-left">
 							<div class="contact-fields-w3ls">
-								<textarea name="Message" placeholder="Message..." ></textarea>
+								<textarea name="Message" placeholder="Message..." required=""></textarea>
 							</div>
-							<input type="submit" name="submit" value="Click to Apply">
+							<input type="submit" value="Submit">
 						</div>
 					</div>
 
@@ -117,29 +139,31 @@
 		
 	</div>
 </section>
+<!-- //contact -->
 
-<!--footer-->
+
+<!-- footer -->
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="http://nitc.ac.in" target="_blank">NIT <span class="display"> CALICUT</span></a>
+			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
 		</div>
 		<div class="footer-grid">
 			
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
-						<a href="home.php">Home</a>
+						<a href="home_manager.php">Home</a>
+					</li>
+					<li>
+						<a href="allocate_room.php">Allocate</a>
 					</li>
 					
 					<li>
-						<a href="services.php">Hostels</a>
+						<a href="contact_manager.php">Contact</a>
 					</li>
 					<li>
-						<a href="contact.php">Contact</a>
-					</li>
-					<li>
-						<a href="profile.php">Profile</a>
+						<a href="admin/manager_profile.php">Profile</a>
 					</li>
 				</ul>
 			</div>
@@ -155,14 +179,6 @@
 	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
 	<!-- //js -->
-		
-	<!-- stats -->
-	<script src="web_home/js/jquery.waypoints.min.js"></script>
-	<script src="web_home/js/jquery.countup.js"></script>
-	<script>
-		$('.counter').countUp();
-	</script>
-	<!-- //stats -->
 
 	<!-- start-smoth-scrolling -->
 	<script src="web_home/js/SmoothScroll.min.js"></script>
@@ -199,62 +215,3 @@
 
 </body>
 </html>
-
-<?php
-   //echo 'Hello';
-   
-   if(isset($_POST['submit'])){
-     $roll = $_SESSION['roll'];
-     $password = $_POST['pwd'];
-     $hostel = $_GET['id'];
-     $message = $_POST['Message'];
-
-     /*echo "<script type='text/javascript'>alert('<?php echo $roll ?>')</script>";*/
-     $query_imp = "SELECT * FROM Student WHERE Student_id = '$roll'";
-     $result_imp = mysqli_query($conn,$query_imp);
-     $row_imp = mysqli_fetch_assoc($result_imp);
-     $room_id = $row_imp['Room_id'];
-     /*echo "<script type='text/javascript'>alert('<?php echo $room_id ?>')</script>";*/
-     if(is_null($room_id)){
-     
-     $query_imp2 = "SELECT * FROM Application WHERE Student_id = '$roll'";
-     $result_imp2 = mysqli_query($conn,$query_imp2);
-     if(mysqli_num_rows($result_imp2)==0){
-
-
-     $query = "SELECT * FROM Student WHERE Student_id = '$roll'";
-     $result = mysqli_query($conn,$query);
-     if($row = mysqli_fetch_assoc($result)){
-     	$pwdCheck = password_verify($password, $row['Pwd']);
-     	
-        if($pwdCheck == false){
-            echo "<script type='text/javascript'>alert('Incorrect Password!!')</script>";
-      }
-      else if($pwdCheck == true) {
-
-      	    $query2 = "SELECT * FROM Hostel WHERE Hostel_name = '$hostel'";
-      	    $result2 = mysqli_query($conn,$query2);
-      	    $row2 = mysqli_fetch_assoc($result2);
-      	    $hostel_id = $row2['Hostel_id'];
-            $query3 = "INSERT INTO Application (Student_id,Hostel_id,Application_status,Message) VALUES ('$roll','$hostel_id',true,'$message')";
-            $result3 = mysqli_query($conn,$query3);
-
-            if($result3){
-            	 echo "<script type='text/javascript'>alert('Application sent successfully')</script>";
-            }
-      }
-     }
-
-     }
-     else{
-     	echo "<script type='text/javascript'>alert('You have Already applied for a Room')</script>";
-     }
-    
-     }
-     else{
-          echo "<script type='text/javascript'>alert('You have Already been alloted a Room')</script>";   
-      }
-
-
-}
-?>
