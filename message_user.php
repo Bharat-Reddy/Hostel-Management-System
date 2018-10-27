@@ -1,11 +1,3 @@
-
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
-
 <?php
 
  require 'includes/config.inc.php';
@@ -30,18 +22,31 @@
 		}
 	</script>
 	<!--// Meta tag Keywords -->
-		<link href="web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all">
+		
 	<!-- css files -->
 	<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
 	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
 	<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
-	<link rel="stylesheet" href="web_home/css_home/flexslider.css" type="text/css" media="screen" property="" />
+	
 	<!-- web-fonts -->
 	<link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
 	<!-- //web-fonts -->
 	
 </head>
+<style type="text/css">
+	.card-header{
+		padding: 15px;
+		font-size: 30px;
+	}
+	.card-body{
+		padding: 15px;
+	}
+	.card-footer{
+		text-align: left;
+		padding: 15px;
+	}
+</style>
 
 <body>
 
@@ -52,7 +57,7 @@
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				
-				<h1><a class="navbar-brand" href="home_manager.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="home.php">NITC <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -60,35 +65,22 @@
 				<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="home_manager.php">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
 						</li>
 						
 						<li class="nav-item">
-						<a class="nav-link" href="allocate_room.php">Allocate Rooms</a>
-					</li>
-					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Rooms
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="allocated_rooms.php">Allocated Rooms</a>
-							</li>
-							<li>
-								<a href="empty_rooms.php">Empty Rooms</a>
-							</li>
-						</ul>
-					</li>
+							<a class="nav-link" href="services.php">Hostels</a>
+						</li>
 						<li class="nav-item active">
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
 							<li>
-								<a href="admin/manager_profile.php">My Profile</a>
+								<a href="profile.php">My Profile</a>
 							</li>
 							<li>
 								<a href="includes/logout.inc.php">Logout</a>
@@ -104,49 +96,36 @@
 	<!--Header-->
 </div>
 <!-- //banner --> 
+
 <?php
-$hostel_id = $_SESSION['hostel_id'];
-$query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
+    $roll_no = $_SESSION['roll'];
+    $query = "SELECT * FROM Message WHERE receiver_id ='$roll_no'";
+    $result = mysqli_query($conn,$query);
+
+    while ($row = mysqli_fetch_assoc($result)){  
+    	$hostel_id = $row['hostel_id'];
+    	$query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
        $result6 = mysqli_query($conn,$query6);
        $row6 = mysqli_fetch_assoc($result6);
        $hostel_name = $row6['Hostel_name'];
+          ?> 
+
+    <div class="container">
+      <div class="card">
+      <div class="card-header"><b><?php echo $row['subject_h']; ?></b></div>
+      <div class="card-body"><?php echo $row['message']; ?></div> 
+      <div class="card-footer"><?php echo $hostel_name." Hostel Manager"; ?><span style="float: right"><?php echo $row['msg_date']." ".$row['msg_time']; ?></span></div>
+  </div>
+</div>
+<br><br>
+             
+    <?php
+    } 
+
 ?>
-<!-- contact -->
-<section class="contact py-5">
-	<div class="container">
-		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Reply Students </h2>
-			<div class="mail_grid_w3l">
-				<form action="contact_manager.php" method="post">
-					<div class="row">
-						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
-							<div class="contact-fields-w3ls">
-								<input type="text" name="name" placeholder="Name"  value="<?php echo $_SESSION['username']; ?>"required="">
-							</div>
-							<div class="contact-fields-w3ls">
-								<input type="text" name="hostel_name" placeholder="Hostel" required="" value="<?php echo $hostel_name; ?>">
-							</div>
-							<div class="contact-fields-w3ls">
-								<input type="text" name="student_roll_no" placeholder="Student Roll Number" required="">
-							</div>
-							<div class="contact-fields-w3ls">
-								<input type="text" name="subject" placeholder="Subject" required="">
-							</div>
-						</div>
-						<div class="col-md-6 contact_left_grid" data-aos="fade-left">
-							<div class="contact-fields-w3ls">
-								<textarea name="message" placeholder="Message..." required=""></textarea>
-							</div>
-							<input type="submit" name="submit" value="Send">
-						</div>
-					</div>
 
-				</form>
-			</div>
-		
-	</div>
-</section>
-<!-- //contact -->
-
+<br>
+<br>
 
 <!-- footer -->
 <footer class="py-5">
@@ -159,17 +138,17 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
-						<a href="home_manager.php">Home</a>
+						<a href="home.php">Home</a>
 					</li>
 					<li>
-						<a href="allocate_room.php">Allocate</a>
+						<a href="services.php">Hostels</a>
 					</li>
 					
 					<li>
-						<a href="contact_manager.php">Contact</a>
+						<a href="contact.php">Contact</a>
 					</li>
 					<li>
-						<a href="admin/manager_profile.php">Profile</a>
+						<a href="profile.php">Profile</a>
 					</li>
 				</ul>
 			</div>
@@ -221,29 +200,3 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 
 </body>
 </html>
-
-<?php
-if(isset($_POST['submit'])){
-	/*echo "<script type='text/javascript'>alert('hello')</script>";*/
-	$subject = $_POST['subject'];
-	$message = $_POST['message'];
-	$hostel_name = $_POST['hostel_name'];
-	$roll = $_POST['student_roll_no'];
-
-    $man_id = $_SESSION['hostel_man_id'];
-
-    $today_date =  date("Y-m-d");
-    $time = date("h:i A");
-
-	$query = "INSERT INTO Message (sender_id,receiver_id,hostel_id,subject_h,message,msg_date,msg_time) VALUES ('$man_id','$roll','$hostel_id','$subject','$message','$today_date','$time')";
-    $result = mysqli_query($conn,$query);
-    if($result){
-         echo "<script type='text/javascript'>alert('Message sent Successfully!')</script>";
-    }
-    else{
-         echo "<script type='text/javascript'>alert('Error in sending message!!! Please try again.')</script>";
-   }
-  }
-
-
-?>

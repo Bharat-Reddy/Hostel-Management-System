@@ -1,19 +1,12 @@
-
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
-
 <?php
-
- require 'includes/config.inc.php';
+  require 'includes/config.inc.php';
+  
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> Intrend Interior Category Flat Bootstrap Responsive Website Template | Contact : W3layouts</title>
+<title> Allocated Rooms</title>
 	
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,19 +22,36 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
+	<!--bootsrap -->
+
 	<!--// Meta tag Keywords -->
-		<link href="web_home/css_home/slider.css" type="text/css" rel="stylesheet" media="all">
+		
 	<!-- css files -->
 	<link rel="stylesheet" href="web_home/css_home/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
 	<link rel="stylesheet" href="web_home/css_home/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
 	<link rel="stylesheet" href="web_home/css_home/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
-	<link rel="stylesheet" href="web_home/css_home/flexslider.css" type="text/css" media="screen" property="" />
+	
 	<!-- web-fonts -->
 	<link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 	<!-- //web-fonts -->
 	
 </head>
+<style type="text/css">
+	.card-header{
+		padding: 15px;
+		font-size: 30px;
+	}
+	.card-body{
+		padding: 15px;
+	}
+	.card-footer{
+		text-align: left;
+		padding: 15px;
+	}
+</style>
+
 
 <body>
 
@@ -64,7 +74,7 @@
 						</li>
 						
 						<li class="nav-item">
-						<a class="nav-link" href="allocate_room.php">Allocate Rooms</a>
+						<a class="nav-link" href="allocate_room.php">Allocate Room</a>
 					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Rooms
@@ -77,12 +87,15 @@
 							<li>
 								<a href="empty_rooms.php">Empty Rooms</a>
 							</li>
+							<li>
+								<a href="vacate_rooms.php">Vacate Rooms</a>
+							</li>
 						</ul>
 					</li>
-						<li class="nav-item active">
-							<a class="nav-link" href="contact.php">Contact</a>
-						</li>
-						<li class="dropdown nav-item">
+					<li class="nav-item">
+						<a class="nav-link" href="contact_manager.php">Contact</a>
+					</li>
+					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
 							<b class="caret"></b>
 						</a>
@@ -97,55 +110,39 @@
 					</li>
 					</ul>
 				</div>
-			  
 			</nav>
 		</div>
 	</header>
 	<!--Header-->
 </div>
 <!-- //banner --> 
-<?php
-$hostel_id = $_SESSION['hostel_id'];
-$query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
-       $row6 = mysqli_fetch_assoc($result6);
-       $hostel_name = $row6['Hostel_name'];
-?>
-<!-- contact -->
-<section class="contact py-5">
-	<div class="container">
-		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Reply Students </h2>
-			<div class="mail_grid_w3l">
-				<form action="contact_manager.php" method="post">
-					<div class="row">
-						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
-							<div class="contact-fields-w3ls">
-								<input type="text" name="name" placeholder="Name"  value="<?php echo $_SESSION['username']; ?>"required="">
-							</div>
-							<div class="contact-fields-w3ls">
-								<input type="text" name="hostel_name" placeholder="Hostel" required="" value="<?php echo $hostel_name; ?>">
-							</div>
-							<div class="contact-fields-w3ls">
-								<input type="text" name="student_roll_no" placeholder="Student Roll Number" required="">
-							</div>
-							<div class="contact-fields-w3ls">
-								<input type="text" name="subject" placeholder="Subject" required="">
-							</div>
-						</div>
-						<div class="col-md-6 contact_left_grid" data-aos="fade-left">
-							<div class="contact-fields-w3ls">
-								<textarea name="message" placeholder="Message..." required=""></textarea>
-							</div>
-							<input type="submit" name="submit" value="Send">
-						</div>
-					</div>
+<br><br><br>
 
-				</form>
-			</div>
-		
-	</div>
-</section>
-<!-- //contact -->
+<?php
+    $username = $_SESSION['username'];
+    $hostel_man_id = $_SESSION['hostel_man_id'];
+    $query = "SELECT * FROM Message WHERE receiver_id ='$hostel_man_id'";
+    $result = mysqli_query($conn,$query);
+
+    while ($row = mysqli_fetch_assoc($result)){  
+          ?> 
+
+    <div class="container">
+      <div class="card">
+      <div class="card-header"><b><?php echo $row['subject_h']; ?></b></div>
+      <div class="card-body"><?php echo $row['message']; ?></div> 
+      <div class="card-footer"><?php echo $row['sender_id'] ?><span style="float: right"><?php echo $row['msg_date']." ".$row['msg_time']; ?></span></div>
+  </div>
+</div>
+<br><br>
+             
+    <?php
+    } 
+
+?>
+
+<br>
+<br>
 
 
 <!-- footer -->
@@ -155,7 +152,6 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
 		</div>
 		<div class="footer-grid">
-			
 			<div class="list-footer">
 				<ul class="footer-nav text-center">
 					<li>
@@ -164,7 +160,6 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 					<li>
 						<a href="allocate_room.php">Allocate</a>
 					</li>
-					
 					<li>
 						<a href="contact_manager.php">Contact</a>
 					</li>
@@ -179,12 +174,31 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 </footer>
 <!-- footer -->
 
-<!-- js-scripts -->		
+<!-- js-scripts -->
 
 	<!-- js -->
 	<script type="text/javascript" src="web_home/js/jquery-2.2.3.min.js"></script>
-	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<script type="text/javascript" src="web_home/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
 	<!-- //js -->
+
+	<!-- banner js -->
+	<script src="web_home/js/snap.svg-min.js"></script>
+	<script src="web_home/js/main.js"></script> <!-- Resource jQuery -->
+	<!-- //banner js -->
+
+	<!-- flexSlider --><!-- for testimonials -->
+	<script defer src="web_home/js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(window).load(function(){
+		  $('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+			  $('body').removeClass('loading');
+			}
+		  });
+		});
+	</script>
+	<!-- //flexSlider --><!-- for testimonials -->
 
 	<!-- start-smoth-scrolling -->
 	<script src="web_home/js/SmoothScroll.min.js"></script>
@@ -192,7 +206,7 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 	<script type="text/javascript" src="web_home/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
+			$(".scroll").click(function(event){
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
@@ -206,44 +220,19 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
-				easingType: 'linear' 
+				easingType: 'linear'
 				};
 			*/
-								
+
 			$().UItoTop({ easingType: 'easeOutQuart' });
-								
+
 			});
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- start-smoth-scrolling -->
-	
+
 <!-- //js-scripts -->
 
 </body>
 </html>
 
-<?php
-if(isset($_POST['submit'])){
-	/*echo "<script type='text/javascript'>alert('hello')</script>";*/
-	$subject = $_POST['subject'];
-	$message = $_POST['message'];
-	$hostel_name = $_POST['hostel_name'];
-	$roll = $_POST['student_roll_no'];
-
-    $man_id = $_SESSION['hostel_man_id'];
-
-    $today_date =  date("Y-m-d");
-    $time = date("h:i A");
-
-	$query = "INSERT INTO Message (sender_id,receiver_id,hostel_id,subject_h,message,msg_date,msg_time) VALUES ('$man_id','$roll','$hostel_id','$subject','$message','$today_date','$time')";
-    $result = mysqli_query($conn,$query);
-    if($result){
-         echo "<script type='text/javascript'>alert('Message sent Successfully!')</script>";
-    }
-    else{
-         echo "<script type='text/javascript'>alert('Error in sending message!!! Please try again.')</script>";
-   }
-  }
-
-
-?>
