@@ -63,6 +63,9 @@
 						<li class="nav-item">
 						<a class="nav-link" href="allocate_room.php">Allocate Room</a>
 					<li class="dropdown nav-item">
+						<li class="nav-item">
+						<a class="nav-link" href="message_hostel_manager.php">Messages Received</a>
+					</li>
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Rooms
 							<b class="caret"></b>
 						</a>

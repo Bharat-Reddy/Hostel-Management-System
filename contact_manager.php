@@ -66,6 +66,9 @@
 						<li class="nav-item">
 						<a class="nav-link" href="allocate_room.php">Allocate Rooms</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="message_hostel_manager.php">Messages Received</a>
+					</li>
 					<li class="dropdown nav-item">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Rooms
 							<b class="caret"></b>
@@ -104,33 +107,39 @@
 	<!--Header-->
 </div>
 <!-- //banner --> 
-
+<?php
+$hostel_id = $_SESSION['hostel_id'];
+$query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
+       $result6 = mysqli_query($conn,$query6);
+       $row6 = mysqli_fetch_assoc($result6);
+       $hostel_name = $row6['Hostel_name'];
+?>
 <!-- contact -->
 <section class="contact py-5">
 	<div class="container">
-		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Contact Us </h2>
+		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Reply Students </h2>
 			<div class="mail_grid_w3l">
-				<form action="#" method="post">
+				<form action="contact_manager.php" method="post">
 					<div class="row">
 						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
 							<div class="contact-fields-w3ls">
-								<input type="text" name="Name" placeholder="Name" required="">
+								<input type="text" name="name" placeholder="Name"  value="<?php echo $_SESSION['username']; ?>"required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="email" name="Email" placeholder="Email" required="">
+								<input type="text" name="hostel_name" placeholder="Hostel" required="" value="<?php echo $hostel_name; ?>">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="Telephone" placeholder="Phone Number" required="">
+								<input type="text" name="student_roll_no" placeholder="Student Roll Number" required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="Subject" placeholder="Subject" required="">
+								<input type="text" name="subject" placeholder="Subject" required="">
 							</div>
 						</div>
 						<div class="col-md-6 contact_left_grid" data-aos="fade-left">
 							<div class="contact-fields-w3ls">
-								<textarea name="Message" placeholder="Message..." required=""></textarea>
+								<textarea name="message" placeholder="Message..." required=""></textarea>
 							</div>
-							<input type="submit" value="Submit">
+							<input type="submit" name="submit" value="Send">
 						</div>
 					</div>
 
@@ -215,3 +224,29 @@
 
 </body>
 </html>
+
+<?php
+if(isset($_POST['submit'])){
+	/*echo "<script type='text/javascript'>alert('hello')</script>";*/
+	$subject = $_POST['subject'];
+	$message = $_POST['message'];
+	$hostel_name = $_POST['hostel_name'];
+	$roll = $_POST['student_roll_no'];
+
+    $man_id = $_SESSION['hostel_man_id'];
+
+    $today_date =  date("Y-m-d");
+    $time = date("h:i A");
+
+	$query = "INSERT INTO Message (sender_id,receiver_id,hostel_id,subject_h,message,msg_date,msg_time) VALUES ('$man_id','$roll','$hostel_id','$subject','$message','$today_date','$time')";
+    $result = mysqli_query($conn,$query);
+    if($result){
+         echo "<script type='text/javascript'>alert('Message sent Successfully!')</script>";
+    }
+    else{
+         echo "<script type='text/javascript'>alert('Error in sending message!!! Please try again.')</script>";
+   }
+  }
+
+
+?>
