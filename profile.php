@@ -80,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 						<li class="dropdown nav-item">
-							<!--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+							<!--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['roll']); ?>
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu agile_short_dropdown">
@@ -124,31 +124,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="abt-agile-right">
 
-								<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+								<h3><?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?></h3>
 								<h5>Student</h5>
 								<ul class="address">
 									<li>
 										<ul class="address-text">
 											<li><b>Roll No </b></li>
-											<li>: <?php echo $_SESSION['roll']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['roll']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>PHONE </b></li>
-											<li>: <?php echo $_SESSION['mob_no']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['mob_no']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>DEPT </b></li>
-											<li>: <?php echo $_SESSION['department']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['department']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>YEAR OF STUDY </b></li>
-											<li>: <?php echo $_SESSION['year_of_study']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['year_of_study']); ?></li>
 										</ul>
 									</li>
 								</ul>
@@ -163,7 +163,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="abt-agile-right">
 
-							<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+							<h3><?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?></h3>
 							<h5>Student</h5>
 							<ul class="address">
 								<li>
@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										 ?>
 
 
-										<li>: <?php echo $hostelName; ?></li>
+										<li>: <?php echo htmlspecialchars($hostelName); ?></li>
 									</ul>
 								</li>
 								<li>
@@ -209,7 +209,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												}
 											}
 										 ?>
-										<li>: <?php echo $roomNo; ?></li>
+										<li>: <?php echo htmlspecialchars($roomNo); ?></li>
 									</ul>
 								</li>
 							</ul>
@@ -296,19 +296,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										$hmemail = 'none';
 									}
 								 ?>
-								<h3><?php echo $hmfname." ".$hmlname; ?></h3>
+								<h3><?php echo htmlspecialchars($hmfname." ".$hmlname); ?></h3>
 								<h5>Admin</h5>
 								<ul class="address">
 									<li>
 										<ul class="address-text">
 											<li><b>PHONE </b></li>
-											<li>: <?php echo $hmMob; ?></li>
+											<li>: <?php echo htmlspecialchars($hmMob); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>Email </b></li>
-											<li>: <?php echo $hmemail; ?></li>
+											<li>: <?php echo htmlspecialchars($hmemail); ?></li>
 										</ul>
 									</li>
 								</ul>

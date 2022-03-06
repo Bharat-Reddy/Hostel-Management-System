@@ -84,7 +84,7 @@
 						<a class="nav-link" href="contact_manager.php">Contact</a>
 					</li>
 					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['username']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -125,7 +125,7 @@
 <?php
    if (isset($_POST['search'])) {
    	   $search_box = $_POST['search_box'];
-   	   /*echo "<script type='text/javascript'>alert('<?php echo $search_box; ?>')</script>";*/
+   	   /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($search_box); ?>')</script>";*/
    	   $hostel_id = $_SESSION['hostel_id'];
    	   $query_search = "SELECT * FROM Room WHERE Room_No like '$search_box%' and Hostel_id = '$hostel_id' and Allocated = '0'";
    	   $result_search = mysqli_query($conn,$query_search);
@@ -152,7 +152,7 @@
    	   else{
    	   	  while($row_search = mysqli_fetch_assoc($result_search)){
          
-      		echo "<tr><td>{$hostel_name}</td><td>{$row_search['Room_No']}</td></tr>\n";
+      		echo htmlspecialchars("<tr><td>{$hostel_name}</td><td>{$row_search['Room_No']}</td></tr>\n");
    	   }
    }
    ?>
@@ -193,7 +193,7 @@
       }
       else{
       	while($row1 = mysqli_fetch_assoc($result1)){
-      		echo "<tr><td>{$hostel_name}</td><td>{$row1['Room_No']}</td></tr>\n";
+      		echo htmlspecialchars("<tr><td>{$hostel_name}</td><td>{$row1['Room_No']}</td></tr>\n");
       	}
       }
     ?>

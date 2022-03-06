@@ -40,7 +40,7 @@ if (isset($_POST['login-submit'])) {
         else {
           echo "<script type='text/javascript'>alert('Not SET')</script>";
         }
-        //echo $_SESSION['lname'];
+        //echo htmlspecialchars($_SESSION['lname']);
         if($_SESSION['isadmin']==0){
           header("Location: ../home_manager.php?login=success");
         }

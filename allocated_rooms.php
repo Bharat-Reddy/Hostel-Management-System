@@ -85,7 +85,7 @@
 						<a class="nav-link" href="contact_manager.php">Contact</a>
 					</li>
 					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['username']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -126,7 +126,7 @@
 <?php
    if (isset($_POST['search'])) {
    	   $search_box = $_POST['search_box'];
-   	   /*echo "<script type='text/javascript'>alert('<?php echo $search_box; ?>')</script>";*/
+   	   /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($search_box); ?>')</script>";*/
    	   $hostel_id = $_SESSION['hostel_id'];
    	   $query_search = "SELECT * FROM Student WHERE Student_id like '$search_box%' and Hostel_id = '$hostel_id'";
    	   $result_search = mysqli_query($conn,$query_search);
@@ -164,7 +164,7 @@
             //student name
             $student_name = $row_search['Fname']." ".$row_search['Lname'];
             
-      		echo "<tr><td>{$student_name}</td><td>{$row_search['Student_id']}</td><td>{$row_search['Mob_no']}</td><td>{$hostel_name}</td><td>{$room_no}</td></tr>\n";
+      		echo htmlspecialchars("<tr><td>{$student_name}</td><td>{$row_search['Student_id']}</td><td>{$row_search['Mob_no']}</td><td>{$hostel_name}</td><td>{$room_no}</td></tr>\n");
    	   }
    }
    ?>
@@ -217,7 +217,7 @@
             //student name
             $student_name = $row1['Fname']." ".$row1['Lname'];
             
-      		echo "<tr><td>{$student_name}</td><td>{$row1['Student_id']}</td><td>{$row1['Mob_no']}</td><td>{$hostel_name}</td><td>{$room_no}</td></tr>\n";
+      		echo htmlspecialchars("<tr><td>{$student_name}</td><td>{$row1['Student_id']}</td><td>{$row1['Mob_no']}</td><td>{$hostel_name}</td><td>{$room_no}</td></tr>\n");
       	}
       }
     ?>

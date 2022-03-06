@@ -37,7 +37,7 @@ if (isset($_POST['login-submit'])) {
         else {
           echo "<script type='text/javascript'>alert('Not SET')</script>";
         }
-        //echo $_SESSION['lname'];
+        //echo htmlspecialchars($_SESSION['lname']);
         header("Location: ../home.php?login=success");
         //exit();
       }

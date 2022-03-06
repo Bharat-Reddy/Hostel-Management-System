@@ -72,7 +72,7 @@
 						<a class="nav-link" href="message_user.php">Message Received</a>
 					</li>
 						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['roll']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -106,10 +106,10 @@
 								<input type="text" name="hostel_name" placeholder="Hostel Name" required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="name" placeholder="Name" value="<?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>" required="">
+								<input type="text" name="name" placeholder="Name" value="<?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?>" required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="rol_no" placeholder="Roll Number" value="<?php echo $_SESSION['roll']; ?>" required="">
+								<input type="text" name="rol_no" placeholder="Roll Number" value="<?php echo htmlspecialchars($_SESSION['roll']); ?>" required="">
 							</div>
 							<div class="contact-fields-w3ls">
 								<input type="text" name="subject" placeholder="Subject" required="">

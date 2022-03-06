@@ -65,7 +65,7 @@
 						<a class="nav-link" href="message_user.php">Message Received</a>
 					</li>
 						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['roll']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -91,17 +91,17 @@
 	<div class="container">
 		<h2 class="heading text-capitalize mb-sm-5 mb-4"> Application Form </h2>
 			<div class="mail_grid_w3l">
-				<form action="application_form.php?id=<?php echo $_GET['id']?>" method="post">
+				<form action="application_form.php?id=<?php echo htmlspecialchars($_GET['id']); ?>" method="post">
 					<div class="row">
 						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
 							<div class="contact-fields-w3ls">
-								<input type="text" name="Name" placeholder="Name" value="<?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>" required="" disabled="disabled">
+								<input type="text" name="Name" placeholder="Name" value="<?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?>" required="" disabled="disabled">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="roll_no" placeholder="Roll Number" value="<?php echo $_SESSION['roll']?>" required="" disabled="disabled">
+								<input type="text" name="roll_no" placeholder="Roll Number" value="<?php echo htmlspecialchars($_SESSION['roll']); ?>" required="" disabled="disabled">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="hostel" placeholder="Hostel" value="<?php echo $_GET['id']?>" required="" disabled="disabled">
+								<input type="text" name="hostel" placeholder="Hostel" value="<?php echo htmlspecialchars($_GET['id']); ?>" required="" disabled="disabled">
 							</div>
 							<div class="contact-fields-w3ls">
 								<input type="password" name="pwd" placeholder="Password" required="">
@@ -212,12 +212,12 @@
      $hostel = $_GET['id'];
      $message = $_POST['Message'];
 
-     /*echo "<script type='text/javascript'>alert('<?php echo $roll ?>')</script>";*/
+     /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($roll); ?>')</script>";*/
      $query_imp = "SELECT * FROM Student WHERE Student_id = '$roll'";
      $result_imp = mysqli_query($conn,$query_imp);
      $row_imp = mysqli_fetch_assoc($result_imp);
      $room_id = $row_imp['Room_id'];
-     /*echo "<script type='text/javascript'>alert('<?php echo $room_id ?>')</script>";*/
+     /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($room_id); ?>')</script>";*/
      if(is_null($room_id)){
      
      $query_imp2 = "SELECT * FROM Application WHERE Student_id = '$roll'";

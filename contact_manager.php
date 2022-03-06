@@ -86,7 +86,7 @@
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['username']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -123,10 +123,10 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 					<div class="row">
 						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
 							<div class="contact-fields-w3ls">
-								<input type="text" name="name" placeholder="Name"  value="<?php echo $_SESSION['username']; ?>"required="">
+								<input type="text" name="name" placeholder="Name"  value="<?php echo htmlspecialchars($_SESSION['username']); ?>"required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="hostel_name" placeholder="Hostel" required="" value="<?php echo $hostel_name; ?>">
+								<input type="text" name="hostel_name" placeholder="Hostel" required="" value="<?php echo htmlspecialchars($hostel_name); ?>">
 							</div>
 							<div class="contact-fields-w3ls">
 								<input type="text" name="student_roll_no" placeholder="Student Roll Number" required="">

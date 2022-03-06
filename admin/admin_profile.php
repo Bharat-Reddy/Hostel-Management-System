@@ -108,25 +108,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="abt-agile-right">
 
-								<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+								<h3><?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?></h3>
 								<h5>Admin</h5>
 								<ul class="address">
 									<li>
 										<ul class="address-text">
 											<li><b>Username </b></li>
-											<li>: <?php echo $_SESSION['username']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['username']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>PHONE </b></li>
-											<li>: <?php echo $_SESSION['mob_no']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['mob_no']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>Email </b></li>
-											<li>: <?php echo $_SESSION['email']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['email']); ?></li>
 										</ul>
 									</li>
 								</ul>
