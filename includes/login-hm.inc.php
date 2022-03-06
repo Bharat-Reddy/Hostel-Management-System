@@ -12,8 +12,15 @@ if (isset($_POST['login-submit'])) {
     exit();
   }
   else {
-    $sql = "SELECT *FROM Hostel_Manager WHERE Username = '$username'";
-    $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM Hostel_Manager WHERE Username = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+      header("Location: ../login-hostel_manager.php?error=sqlerror");
+      exit();
+    }
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     if($row = mysqli_fetch_assoc($result)){
       $pwdCheck = password_verify($password, $row['Pwd']);
       if($pwdCheck == false){

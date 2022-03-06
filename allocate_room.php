@@ -130,8 +130,17 @@
    	   $result_search = mysqli_query($conn,$query_search);
 
    	   //select the hostel name from hostel table
-       $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
+	   $query6 = "SELECT * FROM Hostel WHERE Hostel_id = ?";
+	   $stmt = mysqli_stmt_init($conn);
+	   if(!mysqli_stmt_prepare($stmt, $query6)){
+		 header("Location: ../create_hm.php?error=sqlerror");
+		 exit();
+	   }
+	   mysqli_stmt_bind_param($stmt, "s", $hostel_id);
+	   mysqli_stmt_execute($stmt);
+	   $result6 = mysqli_stmt_get_result($stmt);
+
+
        $row6 = mysqli_fetch_assoc($result6);
        $hostel_name = $row6['Hostel_name'];
    	   ?>
@@ -203,8 +212,15 @@
       	while($row1 = mysqli_fetch_assoc($result1)){
       		//get the name of the student to display
             $student_id = $row1['Student_id']; 
-            $query7 = "SELECT * FROM Student WHERE Student_id = '$student_id'";
-            $result7 = mysqli_query($conn,$query7);
+			$query7 = "SELECT * FROM Hostel WHERE Student_id = ?";
+			$stmt = mysqli_stmt_init($conn);
+			if(!mysqli_stmt_prepare($stmt, $query7)){
+			  header("Location: ../create_hm.php?error=sqlerror");
+			  exit();
+			}
+			mysqli_stmt_bind_param($stmt, "s", $student_id);
+			mysqli_stmt_execute($stmt);
+			$result7 = mysqli_stmt_get_result($stmt);
             $row7 = mysqli_fetch_assoc($result7);
             $student_name = $row7['Fname']." ".$row7['Lname'];
             
