@@ -174,9 +174,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											if($hostelId == NULL){
 												$hostelName = 'None';
 											}
-											else {
-												$sql = "SELECT * FROM Hostel WHERE Hostel_id = '$hostelId'";
-												$result = mysqli_query($conn, $sql);
+											else {				
+												$sql = "SELECT * FROM Hostel WHERE Hostel_id = ?";
+												$stmt = mysqli_stmt_init($conn);
+												if(!mysqli_stmt_prepare($stmt, $sql)){
+												  header("Location: ../create_hm.php?error=sqlerror");
+												  exit();
+												}
+												mysqli_stmt_bind_param($stmt, "s", $hostelId);
+												mysqli_stmt_execute($stmt);
+												$result = mysqli_stmt_get_result($stmt);
 												if($row = mysqli_fetch_assoc($result)){
 													$hostelName = $row['Hostel_name'];
 												}
@@ -199,8 +206,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												$roomNo = 'None';
 											}
 											else {
-												$sql = "SELECT * FROM Room WHERE Room_id = '$roomId'";
-												$result = mysqli_query($conn, $sql);
+												$sql = "SELECT * FROM Room WHERE Room_id = ?";
+												$stmt = mysqli_stmt_init($conn);
+												if(!mysqli_stmt_prepare($stmt, $sql)){
+												  header("Location: ../create_hm.php?error=sqlerror");
+												  exit();
+												}
+												mysqli_stmt_bind_param($stmt, "s", $roomId);
+												mysqli_stmt_execute($stmt);
+												$result = mysqli_stmt_get_result($stmt);
 												if($row = mysqli_fetch_assoc($result)){
 													$roomNo = $row['Room_No'];
 												}
@@ -281,8 +295,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="abt-agile-right">
 								<?php
 									$Hid = $_SESSION['hostel_id'];
-									$sql1 = "SELECT * FROM Hostel_Manager WHERE Hostel_id = '$Hid'";
-									$result1 = mysqli_query($conn, $sql1);
+									$sql1 = "SELECT * FROM Hostel_Manager WHERE Hostel_id = ?";
+									$stmt = mysqli_stmt_init($conn);
+									if(!mysqli_stmt_prepare($stmt, $sql1)){
+									  header("Location: ../create_hm.php?error=sqlerror");
+									  exit();
+									}
+									mysqli_stmt_bind_param($stmt, "s", $Hid);
+									mysqli_stmt_execute($stmt);
+									$result1 = mysqli_stmt_get_result($stmt);
 									if($row1 = mysqli_fetch_assoc($result1)){
 										$hmfname = $row1['Fname'];
 										$hmlname = $row1['Lname'];

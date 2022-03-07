@@ -204,60 +204,86 @@
 </html>
 
 <?php
-   //echo 'Hello';
-   
-   if(isset($_POST['submit'])){
-     $roll = $_SESSION['roll'];
-     $password = $_POST['pwd'];
-     $hostel = $_GET['id'];
-     $message = $_POST['Message'];
+   	if(isset($_POST['submit'])){
+    	$roll = $_SESSION['roll'];
+     	$password = $_POST['pwd'];
+     	$hostel = $_GET['id'];
+     	$message = $_POST['Message'];
 
      /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($roll); ?>')</script>";*/
-     $query_imp = "SELECT * FROM Student WHERE Student_id = '$roll'";
-     $result_imp = mysqli_query($conn,$query_imp);
-     $row_imp = mysqli_fetch_assoc($result_imp);
-     $room_id = $row_imp['Room_id'];
-     /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($room_id); ?>')</script>";*/
-     if(is_null($room_id)){
-     
-     $query_imp2 = "SELECT * FROM Application WHERE Student_id = '$roll'";
-     $result_imp2 = mysqli_query($conn,$query_imp2);
-     if(mysqli_num_rows($result_imp2)==0){
+		$query_imp = "SELECT * FROM Student WHERE Student_id = ?";
+		$stmt = mysqli_stmt_init($conn);
+		if(!mysqli_stmt_prepare($stmt, $query_imp)){
+			header("Location: ../create_hm.php?error=sqlerror");
+			exit();
+		}
+			mysqli_stmt_bind_param($stmt, "s", $roll);
+			mysqli_stmt_execute($stmt);
+			$result_imp = mysqli_stmt_get_result($stmt);
+			$row_imp = mysqli_fetch_assoc($result_imp);
+			$room_id = $row_imp['Room_id'];
+			/*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($room_id); ?>')</script>";*/
+			if(is_null($room_id)){
+			$query_imp2 = "SELECT * FROM Application WHERE Student_id = ?";
+			$stmt = mysqli_stmt_init($conn);
+			if(!mysqli_stmt_prepare($stmt, $query_imp2)){
+				header("Location: ../create_hm.php?error=sqlerror");
+				exit();
+			}
+				mysqli_stmt_bind_param($stmt, "s", $roll);
+				mysqli_stmt_execute($stmt);
+				$result_imp2 = mysqli_stmt_get_result($stmt);
 
+				if(mysqli_num_rows($result_imp2)==0){
+					$query = "SELECT * FROM Student WHERE Student_id = ?";
+					$stmt = mysqli_stmt_init($conn);
+					if(!mysqli_stmt_prepare($stmt, $query)){
+						header("Location: ../create_hm.php?error=sqlerror");
+						exit();
+					}
+					mysqli_stmt_bind_param($stmt, "s", $roll);
+					mysqli_stmt_execute($stmt);
+					$result = mysqli_stmt_get_result($stmt);
+					if($row = mysqli_fetch_assoc($result)){
+						$pwdCheck = password_verify($password, $row['Pwd']);
+						if($pwdCheck == false){
+							echo "<script type='text/javascript'>alert('Incorrect Password!!')</script>";
+						}
+						else if($pwdCheck == true) {
+							$query2 = "SELECT * FROM Hostel WHERE Hostel_name = ?";
+							$stmt = mysqli_stmt_init($conn);
+							if(!mysqli_stmt_prepare($stmt, $query2)){
+								header("Location: ../create_hm.php?error=sqlerror");
+								exit();
+							}
+							mysqli_stmt_bind_param($stmt, "s", $hostel);
+							mysqli_stmt_execute($stmt);
+							$result2 = mysqli_stmt_get_result($stmt);
+							$row2 = mysqli_fetch_assoc($result2);
+							$hostel_id = $row2['Hostel_id'];
+							$Application_status = 1;
 
-     $query = "SELECT * FROM Student WHERE Student_id = '$roll'";
-     $result = mysqli_query($conn,$query);
-     if($row = mysqli_fetch_assoc($result)){
-     	$pwdCheck = password_verify($password, $row['Pwd']);
-     	
-        if($pwdCheck == false){
-            echo "<script type='text/javascript'>alert('Incorrect Password!!')</script>";
-      }
-      else if($pwdCheck == true) {
-
-      	    $query2 = "SELECT * FROM Hostel WHERE Hostel_name = '$hostel'";
-      	    $result2 = mysqli_query($conn,$query2);
-      	    $row2 = mysqli_fetch_assoc($result2);
-      	    $hostel_id = $row2['Hostel_id'];
-            $query3 = "INSERT INTO Application (Student_id,Hostel_id,Application_status,Message) VALUES ('$roll','$hostel_id',true,'$message')";
-            $result3 = mysqli_query($conn,$query3);
-
-            if($result3){
-            	 echo "<script type='text/javascript'>alert('Application sent successfully')</script>";
-            }
-      }
-     }
-
-     }
-     else{
-     	echo "<script type='text/javascript'>alert('You have Already applied for a Room')</script>";
-     }
-    
-     }
-     else{
-          echo "<script type='text/javascript'>alert('You have Already been alloted a Room')</script>";   
-      }
-
-
-}
+							$query3 = "INSERT INTO Application (Student_id, Hostel_id, Application_status, Message) VALUES (?, ?, ?, ?)";
+							$stmt = mysqli_stmt_init($conn);
+							if(!mysqli_stmt_prepare($stmt, $query3)){
+							header("Location: ../create_hm.php?error=sqlerror");
+							exit();
+							}
+							mysqli_stmt_bind_param($stmt, "ssss", $roll, $hostel_id, $Application_status, $message);
+							mysqli_stmt_execute($stmt);
+							$result3 = mysqli_stmt_affected_rows($stmt);
+							if($result3){
+								echo "<script type='text/javascript'>alert('Application sent successfully')</script>";
+							}
+						}
+					}
+				}
+				else{
+					echo "<script type='text/javascript'>alert('You have Already applied for a Room')</script>";
+				}
+			}
+			else{
+				echo "<script type='text/javascript'>alert('You have Already been alloted a Room')</script>";   
+			}
+	}
 ?>

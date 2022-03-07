@@ -22,7 +22,6 @@ if (isset($_POST['hm_remove_submit'])) {
       mysqli_stmt_bind_param($stmt, "s", $username);
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
-      $result = mysqli_query($conn, $sql);
       if($row = mysqli_fetch_assoc($result)){
         $sql2 = "SELECT * FROM Hostel WHERE Hostel_name = ?";
         $stmt2 = mysqli_stmt_init($conn);
@@ -33,7 +32,6 @@ if (isset($_POST['hm_remove_submit'])) {
         mysqli_stmt_bind_param($stmt2, "s", $hostel_name);
         mysqli_stmt_execute($stmt2);
         $result2 = mysqli_stmt_get_result($stmt2);
-        $result2 = mysqli_query($conn, $sql2);
         if($row2 = mysqli_fetch_assoc($result2)){
           $HNO = $row2['Hostel_id'];
           if ($HNO == $row['Hostel_id']) {
@@ -52,7 +50,6 @@ if (isset($_POST['hm_remove_submit'])) {
               mysqli_stmt_bind_param($stmt3, "s", $username);
               mysqli_stmt_execute($stmt3);
               $result3 = mysqli_stmt_get_result($stmt3);
-              $result3 = mysqli_query($conn, $sql3);
               if($result3){
                 header("Location: ../admin/create_hm.php?DeletionSuccessful");
                 exit();

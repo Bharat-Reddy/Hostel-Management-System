@@ -24,7 +24,7 @@ if (isset($_POST['login-submit'])) {
     if($row = mysqli_fetch_assoc($result)){
       $pwdCheck = password_verify($password, $row['Pwd']);
       if($pwdCheck == false){
-        header("Location: ../login-hostel_manager.php?error=wrongpwd");
+        header("Location: ../login-hostel_manager.php?error=wrongcreds");
         exit();
       }
       else if($pwdCheck == true) {
