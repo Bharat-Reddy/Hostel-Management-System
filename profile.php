@@ -80,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 						<li class="dropdown nav-item">
-							<!--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+							<!--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['roll']); ?>
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu agile_short_dropdown">
@@ -124,31 +124,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="abt-agile-right">
 
-								<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+								<h3><?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?></h3>
 								<h5>Student</h5>
 								<ul class="address">
 									<li>
 										<ul class="address-text">
 											<li><b>Roll No </b></li>
-											<li>: <?php echo $_SESSION['roll']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['roll']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>PHONE </b></li>
-											<li>: <?php echo $_SESSION['mob_no']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['mob_no']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>DEPT </b></li>
-											<li>: <?php echo $_SESSION['department']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['department']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>YEAR OF STUDY </b></li>
-											<li>: <?php echo $_SESSION['year_of_study']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['year_of_study']); ?></li>
 										</ul>
 									</li>
 								</ul>
@@ -163,7 +163,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="abt-agile-right">
 
-							<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+							<h3><?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?></h3>
 							<h5>Student</h5>
 							<ul class="address">
 								<li>
@@ -174,9 +174,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											if($hostelId == NULL){
 												$hostelName = 'None';
 											}
-											else {
-												$sql = "SELECT * FROM Hostel WHERE Hostel_id = '$hostelId'";
-												$result = mysqli_query($conn, $sql);
+											else {				
+												$sql = "SELECT * FROM Hostel WHERE Hostel_id = ?";
+												$stmt = mysqli_stmt_init($conn);
+												if(!mysqli_stmt_prepare($stmt, $sql)){
+												  header("Location: ../create_hm.php?error=sqlerror");
+												  exit();
+												}
+												mysqli_stmt_bind_param($stmt, "s", $hostelId);
+												mysqli_stmt_execute($stmt);
+												$result = mysqli_stmt_get_result($stmt);
 												if($row = mysqli_fetch_assoc($result)){
 													$hostelName = $row['Hostel_name'];
 												}
@@ -187,7 +194,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										 ?>
 
 
-										<li>: <?php echo $hostelName; ?></li>
+										<li>: <?php echo htmlspecialchars($hostelName); ?></li>
 									</ul>
 								</li>
 								<li>
@@ -199,8 +206,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												$roomNo = 'None';
 											}
 											else {
-												$sql = "SELECT * FROM Room WHERE Room_id = '$roomId'";
-												$result = mysqli_query($conn, $sql);
+												$sql = "SELECT * FROM Room WHERE Room_id = ?";
+												$stmt = mysqli_stmt_init($conn);
+												if(!mysqli_stmt_prepare($stmt, $sql)){
+												  header("Location: ../create_hm.php?error=sqlerror");
+												  exit();
+												}
+												mysqli_stmt_bind_param($stmt, "s", $roomId);
+												mysqli_stmt_execute($stmt);
+												$result = mysqli_stmt_get_result($stmt);
 												if($row = mysqli_fetch_assoc($result)){
 													$roomNo = $row['Room_No'];
 												}
@@ -209,7 +223,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												}
 											}
 										 ?>
-										<li>: <?php echo $roomNo; ?></li>
+										<li>: <?php echo htmlspecialchars($roomNo); ?></li>
 									</ul>
 								</li>
 							</ul>
@@ -281,8 +295,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="abt-agile-right">
 								<?php
 									$Hid = $_SESSION['hostel_id'];
-									$sql1 = "SELECT * FROM Hostel_Manager WHERE Hostel_id = '$Hid'";
-									$result1 = mysqli_query($conn, $sql1);
+									$sql1 = "SELECT * FROM Hostel_Manager WHERE Hostel_id = ?";
+									$stmt = mysqli_stmt_init($conn);
+									if(!mysqli_stmt_prepare($stmt, $sql1)){
+									  header("Location: ../create_hm.php?error=sqlerror");
+									  exit();
+									}
+									mysqli_stmt_bind_param($stmt, "s", $Hid);
+									mysqli_stmt_execute($stmt);
+									$result1 = mysqli_stmt_get_result($stmt);
 									if($row1 = mysqli_fetch_assoc($result1)){
 										$hmfname = $row1['Fname'];
 										$hmlname = $row1['Lname'];
@@ -296,19 +317,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										$hmemail = 'none';
 									}
 								 ?>
-								<h3><?php echo $hmfname." ".$hmlname; ?></h3>
+								<h3><?php echo htmlspecialchars($hmfname." ".$hmlname); ?></h3>
 								<h5>Admin</h5>
 								<ul class="address">
 									<li>
 										<ul class="address-text">
 											<li><b>PHONE </b></li>
-											<li>: <?php echo $hmMob; ?></li>
+											<li>: <?php echo htmlspecialchars($hmMob); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>Email </b></li>
-											<li>: <?php echo $hmemail; ?></li>
+											<li>: <?php echo htmlspecialchars($hmemail); ?></li>
 										</ul>
 									</li>
 								</ul>

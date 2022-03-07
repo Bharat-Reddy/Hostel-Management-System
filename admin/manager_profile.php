@@ -125,25 +125,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="abt-agile-right">
 
-								<h3><?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?></h3>
+								<h3><?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?></h3>
 								<h5>Hostel Manager</h5>
 								<ul class="address">
 									<li>
 										<ul class="address-text">
 											<li><b>Username </b></li>
-											<li>: <?php echo $_SESSION['username']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['username']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>PHONE </b></li>
-											<li>: <?php echo $_SESSION['mob_no']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['mob_no']); ?></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
 											<li><b>Email </b></li>
-											<li>: <?php echo $_SESSION['email']; ?></li>
+											<li>: <?php echo htmlspecialchars($_SESSION['email']); ?></li>
 										</ul>
 									</li>
                   <li>
@@ -151,15 +151,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li><b>Managing Hostel </b></li>
                       <?php
                           $HOID = $_SESSION['hostel_id'];
-                          $query999 = "SELECT * FROM Hostel WHERE Hostel_id = '$HOID'";
-                          $result999 = mysqli_query($conn,$query999);
+
+						  $query999 = "SELECT * FROM Hostel WHERE Hostel_id = ?";
+						  $stmt = mysqli_stmt_init($conn);
+						  if(!mysqli_stmt_prepare($stmt, $query999)){
+							header("Location: ../admin/create_hm.php?error=sqlerror");
+							exit();
+						  }
+						  mysqli_stmt_bind_param($stmt, "s", $HOID);
+						  mysqli_stmt_execute($stmt);
+						  $result999 = mysqli_stmt_get_result($stmt);
                           $row999 = mysqli_fetch_assoc($result999);
                           $HNM = $row999['Hostel_name'];
                           if(!$HNM){
                             $HNM='None';
                           }
                        ?>
-											<li>: <?php echo $HNM; ?></li>
+											<li>: <?php echo htmlspecialchars($HNM); ?></li>
 										</ul>
 									</li>
 								</ul>
@@ -176,8 +184,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="abt-agile-right">
 							<?php
 									$ad=1;
-									$queryA = "SELECT * FROM Hostel_Manager WHERE Isadmin = '$ad'";
-									$resultA = mysqli_query($conn,$queryA);
+									$queryA = "SELECT * FROM Hostel_Manager WHERE Isadmin = ?";
+									$stmt = mysqli_stmt_init($conn);
+									if(!mysqli_stmt_prepare($stmt, $queryA)){
+									  header("Location: ../admin/create_hm.php?error=sqlerror");
+									  exit();
+									}
+									mysqli_stmt_bind_param($stmt, "s", $ad);
+									mysqli_stmt_execute($stmt);
+									$resultA = mysqli_stmt_get_result($stmt);
 									$rowA = mysqli_fetch_assoc($resultA);
 									$adFname = $rowA['Fname'];
 									$adLname = $rowA['Lname'];
@@ -185,25 +200,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									$adMob = $rowA['Mob_no'];
 									$adEmail = $rowA['Email'];
 							 ?>
-              <h3><?php echo $adFname." ".$adLname; ?></h3>
+              <h3><?php echo htmlspecialchars($adFname." ".$adLname); ?></h3>
               <h5>Admin</h5>
               <ul class="address">
                 <li>
                   <ul class="address-text">
                     <li><b>Username </b></li>
-                    <li>: <?php echo $adUname; ?></li>
+                    <li>: <?php echo htmlspecialchars($adUname); ?></li>
                   </ul>
                 </li>
                 <li>
                   <ul class="address-text">
                     <li><b>PHONE </b></li>
-                    <li>: <?php echo $adMob; ?></li>
+                    <li>: <?php echo htmlspecialchars($adMob); ?></li>
                   </ul>
                 </li>
                 <li>
                   <ul class="address-text">
                     <li><b>Email </b></li>
-                    <li>: <?php echo $adEmail; ?></li>
+                    <li>: <?php echo htmlspecialchars($adEmail); ?></li>
                   </ul>
                 </li>
                 

@@ -72,7 +72,7 @@
 						<a class="nav-link" href="message_user.php">Message Received</a>
 					</li>
 						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['roll']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -106,10 +106,10 @@
 								<input type="text" name="hostel_name" placeholder="Hostel Name" required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="name" placeholder="Name" value="<?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>" required="">
+								<input type="text" name="name" placeholder="Name" value="<?php echo htmlspecialchars($_SESSION['fname']." ".$_SESSION['lname']); ?>" required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="rol_no" placeholder="Roll Number" value="<?php echo $_SESSION['roll']; ?>" required="">
+								<input type="text" name="rol_no" placeholder="Roll Number" value="<?php echo htmlspecialchars($_SESSION['roll']); ?>" required="">
 							</div>
 							<div class="contact-fields-w3ls">
 								<input type="text" name="subject" placeholder="Subject" required="">
@@ -212,23 +212,45 @@ if(isset($_POST['submit'])){
 	$message = $_POST['message'];
 	$hostel_name = $_POST['hostel_name'];
 
-    $query7 = "SELECT * FROM Hostel WHERE Hostel_name = '$hostel_name'";
-    $result7 = mysqli_query($conn,$query7);
+    $query7 = "SELECT * FROM Hostel WHERE Hostel_name = ?";
+	$stmt = mysqli_stmt_init($conn);
+	if(!mysqli_stmt_prepare($stmt, $query7)){
+	  header("Location: ../create_hm.php?error=sqlerror");
+	  exit();
+	}
+	mysqli_stmt_bind_param($stmt, "s", $hostel_name);
+	mysqli_stmt_execute($stmt);
+	$result7 = mysqli_stmt_get_result($stmt);
     $row7 = mysqli_fetch_assoc($result7);
     $hostel_id = $row7['Hostel_id'];
 
-    $query6 = "SELECT * FROM Hostel_Manager WHERE Hostel_id = '$hostel_id'";
-    $result6 = mysqli_query($conn,$query6);
+    $query6 = "SELECT * FROM Hostel_Manager WHERE Hostel_id = ?";
+	$stmt = mysqli_stmt_init($conn);
+	if(!mysqli_stmt_prepare($stmt, $query6)){
+	  header("Location: ../create_hm.php?error=sqlerror");
+	  exit();
+	}
+	mysqli_stmt_bind_param($stmt, "s", $hostel_id);
+	mysqli_stmt_execute($stmt);
+	$result6 = mysqli_stmt_get_result($stmt);
     $row6 = mysqli_fetch_assoc($result6);
-    $hos_man_user = $row6['Hostel_man_id'];
+    $hos_man_id = $row6['Hostel_man_id'];
 
 	$roll = $_SESSION['roll'];
 
     $today_date =  date("Y-m-d");
     $time = date("h:i A");
 
-	$query = "INSERT INTO Message (sender_id,receiver_id,hostel_id,subject_h,message,msg_date,msg_time) VALUES ('$roll','$hos_man_id','$hostel_id','$subject','$message','$today_date','$time')";
-    $result = mysqli_query($conn,$query);
+	$query = "INSERT INTO Message (sender_id, receiver_id, hostel_id, subject_h, message, msg_date, msg_time) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    
+	$stmt = mysqli_stmt_init($conn);
+	if(!mysqli_stmt_prepare($stmt, $query)){
+	  header("Location: ../create_hm.php?error=sqlerror");
+	  exit();
+	}
+	mysqli_stmt_bind_param($stmt, "sssssss", $roll, $hos_man_id, $hostel_id, $subject, $message, $today_date, $time);
+	mysqli_stmt_execute($stmt);
+	$result = mysqli_stmt_affected_rows($stmt);
     if($result){
          echo "<script type='text/javascript'>alert('Message sent Successfully!')</script>";
     }

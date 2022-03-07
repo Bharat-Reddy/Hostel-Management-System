@@ -83,7 +83,7 @@
 						<a class="nav-link" href="contact_manager.php">Contact</a>
 					</li>
 					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['username']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -124,14 +124,23 @@
 <?php
    if (isset($_POST['search'])) {
    	   $search_box = $_POST['search_box'];
-   	   /*echo "<script type='text/javascript'>alert('<?php echo $search_box; ?>')</script>";*/
+   	   /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($search_box); ?>')</script>";*/
    	   $hostel_id = $_SESSION['hostel_id'];
    	   $query_search = "SELECT * FROM Application WHERE Student_id like '$search_box%' and Hostel_id = '$hostel_id' and Application_status = '1'";
    	   $result_search = mysqli_query($conn,$query_search);
 
    	   //select the hostel name from hostel table
-       $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
+	   $query6 = "SELECT * FROM Hostel WHERE Hostel_id = ?";
+	   $stmt = mysqli_stmt_init($conn);
+	   if(!mysqli_stmt_prepare($stmt, $query6)){
+		 header("Location: ../create_hm.php?error=sqlerror");
+		 exit();
+	   }
+	   mysqli_stmt_bind_param($stmt, "s", $hostel_id);
+	   mysqli_stmt_execute($stmt);
+	   $result6 = mysqli_stmt_get_result($stmt);
+
+
        $row6 = mysqli_fetch_assoc($result6);
        $hostel_name = $row6['Hostel_name'];
    	   ?>
@@ -160,7 +169,7 @@
             $row7 = mysqli_fetch_assoc($result7);
             $student_name = $row7['Fname']." ".$row7['Lname'];
             
-      		echo "<tr><td>{$student_name}</td><td>{$row_search['Student_id']}</td><td>{$hostel_name}</td><td>{$row_search['Message']}</td></tr>\n";
+      		echo htmlspecialchars("<tr><td>{$student_name}</td><td>{$row_search['Student_id']}</td><td>{$hostel_name}</td><td>{$row_search['Message']}</td></tr>\n");
 
    	   }
    }
@@ -203,12 +212,19 @@
       	while($row1 = mysqli_fetch_assoc($result1)){
       		//get the name of the student to display
             $student_id = $row1['Student_id']; 
-            $query7 = "SELECT * FROM Student WHERE Student_id = '$student_id'";
-            $result7 = mysqli_query($conn,$query7);
+			$query7 = "SELECT * FROM Hostel WHERE Student_id = ?";
+			$stmt = mysqli_stmt_init($conn);
+			if(!mysqli_stmt_prepare($stmt, $query7)){
+			  header("Location: ../create_hm.php?error=sqlerror");
+			  exit();
+			}
+			mysqli_stmt_bind_param($stmt, "s", $student_id);
+			mysqli_stmt_execute($stmt);
+			$result7 = mysqli_stmt_get_result($stmt);
             $row7 = mysqli_fetch_assoc($result7);
             $student_name = $row7['Fname']." ".$row7['Lname'];
             
-      		echo "<tr><td>{$student_name}</td><td>{$row1['Student_id']}</td><td>{$hostel_name}</td><td>{$row1['Message']}</td></tr>\n";
+      		echo htmlspecialchars("<tr><td>{$student_name}</td><td>{$row1['Student_id']}</td><td>{$hostel_name}</td><td>{$row1['Message']}</td></tr>\n");
       	}
       }
     ?>
@@ -230,7 +246,7 @@
 if(isset($_POST['submit'])){
    $result1 = mysqli_query($conn,$query1);
    
-   /*echo "<script type='text/javascript'>alert('<?php echo $room_no ?>')</script>";*/
+   /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($room_no); ?>')</script>";*/
    while($row1 = mysqli_fetch_assoc($result1)){
          //find the minimum room number
      $query2 = "SELECT * FROM Room where Room_No = (SELECT MIN(Room_No) FROM Room where Allocated = '0' and Hostel_id = '$hostel_id')";
@@ -245,7 +261,7 @@ if(isset($_POST['submit'])){
      $student_id = $row1['Student_id'];
      $query3 = "UPDATE Application SET Application_status = '0',Room_No = '$room_no' WHERE Student_id = '$student_id'";
      $result3 = mysqli_query($conn,$query3);
-     /*echo "<script type='text/javascript'>alert('<?php echo $result3; ?>')</script>";*/
+     /*echo "<script type='text/javascript'>alert('<?php echo htmlspecialchars($result3); ?>')</script>";*/
      if($result3){
      	$room_id = $row2['Room_id'];
      	$query4 = "UPDATE Student SET Hostel_id = '$hostel_id',Room_id = '$room_id' WHERE Student_id = '$student_id'";

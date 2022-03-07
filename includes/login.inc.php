@@ -12,12 +12,21 @@ if (isset($_POST['login-submit'])) {
     exit();
   }
   else {
-    $sql = "SELECT *FROM Student WHERE Student_id = '$roll'";
-    $result = mysqli_query($conn, $sql);
+
+    $sql = "SELECT * FROM Student WHERE Student_id = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+      header("Location: ../index.php?error=sqlerror");
+      exit();
+    }
+    mysqli_stmt_bind_param($stmt, "s", $roll);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
     if($row = mysqli_fetch_assoc($result)){
       $pwdCheck = password_verify($password, $row['Pwd']);
       if($pwdCheck == false){
-        header("Location: ../index.php?error=wrongpwd");
+        header("Location: ../index.php?error=wrongcreds");
         exit();
       }
       else if($pwdCheck == true) {
@@ -37,7 +46,7 @@ if (isset($_POST['login-submit'])) {
         else {
           echo "<script type='text/javascript'>alert('Not SET')</script>";
         }
-        //echo $_SESSION['lname'];
+        //echo htmlspecialchars($_SESSION['lname']);
         header("Location: ../home.php?login=success");
         //exit();
       }
@@ -47,7 +56,7 @@ if (isset($_POST['login-submit'])) {
       }
     }
     else{
-      header("Location: ../index.php?error=nouser");
+      header("Location: ../index.php?error=wrongcreds");
       exit();
     }
   }

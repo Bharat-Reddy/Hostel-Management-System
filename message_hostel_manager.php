@@ -99,7 +99,7 @@
 						<a class="nav-link" href="contact_manager.php">Contact</a>
 					</li>
 					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['username']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -132,9 +132,9 @@
 
     <div class="container">
       <div class="card">
-      <div class="card-header"><b><?php echo $row['subject_h']; ?></b></div>
-      <div class="card-body"><?php echo $row['message']; ?></div> 
-      <div class="card-footer"><?php echo $row['sender_id'] ?><span style="float: right"><?php echo $row['msg_date']." ".$row['msg_time']; ?></span></div>
+      <div class="card-header"><b><?php echo htmlspecialchars($row['subject_h']); ?></b></div>
+      <div class="card-body"><?php echo htmlspecialchars($row['message']); ?></div> 
+      <div class="card-footer"><?php echo htmlspecialchars($row['sender_id']); ?><span style="float: right"><?php echo htmlspecialchars($row['msg_date']." ".$row['msg_time']); ?></span></div>
   </div>
 </div>
 <br><br>

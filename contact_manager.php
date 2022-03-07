@@ -86,7 +86,7 @@
 							<a class="nav-link" href="contact.php">Contact</a>
 						</li>
 						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['username']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['username']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -108,11 +108,18 @@
 </div>
 <!-- //banner --> 
 <?php
-$hostel_id = $_SESSION['hostel_id'];
-$query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
-       $row6 = mysqli_fetch_assoc($result6);
-       $hostel_name = $row6['Hostel_name'];
+	$hostel_id = $_SESSION['hostel_id'];
+	$query6 = "SELECT * FROM Hostel WHERE Hostel_id = ?";
+	$stmt = mysqli_stmt_init($conn);
+	if(!mysqli_stmt_prepare($stmt, $query6)){
+		header("Location: ../create_hm.php?error=sqlerror");
+		exit();
+	}
+	mysqli_stmt_bind_param($stmt, "s", $hostel_id);
+	mysqli_stmt_execute($stmt);
+	$result6 = mysqli_stmt_get_result($stmt);
+    $row6 = mysqli_fetch_assoc($result6);
+   $hostel_name = $row6['Hostel_name'];
 ?>
 <!-- contact -->
 <section class="contact py-5">
@@ -123,10 +130,10 @@ $query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
 					<div class="row">
 						<div class="col-md-6 contact_left_grid" data-aos="fade-right">
 							<div class="contact-fields-w3ls">
-								<input type="text" name="name" placeholder="Name"  value="<?php echo $_SESSION['username']; ?>"required="">
+								<input type="text" name="name" placeholder="Name"  value="<?php echo htmlspecialchars($_SESSION['username']); ?>"required="">
 							</div>
 							<div class="contact-fields-w3ls">
-								<input type="text" name="hostel_name" placeholder="Hostel" required="" value="<?php echo $hostel_name; ?>">
+								<input type="text" name="hostel_name" placeholder="Hostel" required="" value="<?php echo htmlspecialchars($hostel_name); ?>">
 							</div>
 							<div class="contact-fields-w3ls">
 								<input type="text" name="student_roll_no" placeholder="Student Roll Number" required="">

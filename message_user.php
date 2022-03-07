@@ -78,7 +78,7 @@
 						<a class="nav-link" href="message_user.php">Message Received</a>
 					</li>
 						<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo $_SESSION['roll']; ?>
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><?php echo htmlspecialchars($_SESSION['roll']); ?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu agile_short_dropdown">
@@ -102,22 +102,29 @@
 
 <?php
     $roll_no = $_SESSION['roll'];
-    $query = "SELECT * FROM Message WHERE receiver_id ='$roll_no'";
-    $result = mysqli_query($conn,$query);
+    $query = "SELECT * FROM Message WHERE receiver_id = ?";
+	$stmt = mysqli_stmt_init($conn);
+	if(!mysqli_stmt_prepare($stmt, $query)){
+	  header("Location: ../create_hm.php?error=sqlerror");
+	  exit();
+	}
+	mysqli_stmt_bind_param($stmt, "s", $roll_no);
+	mysqli_stmt_execute($stmt);
+	$result = mysqli_stmt_get_result($stmt);
 
     while ($row = mysqli_fetch_assoc($result)){  
     	$hostel_id = $row['hostel_id'];
     	$query6 = "SELECT * FROM Hostel WHERE Hostel_id = '$hostel_id'";
-       $result6 = mysqli_query($conn,$query6);
-       $row6 = mysqli_fetch_assoc($result6);
-       $hostel_name = $row6['Hostel_name'];
-          ?> 
+       	$result6 = mysqli_query($conn,$query6);
+       	$row6 = mysqli_fetch_assoc($result6);
+       	$hostel_name = $row6['Hostel_name'];
+?> 
 
     <div class="container">
       <div class="card">
-      <div class="card-header"><b><?php echo $row['subject_h']; ?></b></div>
-      <div class="card-body"><?php echo $row['message']; ?></div> 
-      <div class="card-footer"><?php echo $hostel_name." Hostel Manager"; ?><span style="float: right"><?php echo $row['msg_date']." ".$row['msg_time']; ?></span></div>
+      <div class="card-header"><b><?php echo htmlspecialchars($row['subject_h']); ?></b></div>
+      <div class="card-body"><?php echo htmlspecialchars($row['message']); ?></div> 
+      <div class="card-footer"><?php echo htmlspecialchars($hostel_name." Hostel Manager"); ?><span style="float: right"><?php echo htmlspecialchars($row['msg_date']." ".$row['msg_time']); ?></span></div>
   </div>
 </div>
 <br><br>
